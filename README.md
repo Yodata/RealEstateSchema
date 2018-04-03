@@ -1,6 +1,8 @@
-# RealEstateSchema
+# Real Estate Integration Schema
 
-Standard events for vendor agnostic software integration in the real estate domain.
+Here be some practical standards for integrating software and services in the real estate industry.
+
+The goal of this (and related projects) is promoting and accellerating innovation in the real estate industry by standarding the software integration process.
 
 Community project, your feedback, suggestions and contributions are very welcome.
 
