@@ -1,14 +1,22 @@
 # Real Estate Integration Schema
 
+## About the Project
 Here be some practical standards for integrating software and services in the real estate industry.
 
-The goal of this (and related projects) is promoting and accellerating innovation in the real estate industry by standarding the software integration process.
+The goal of this (and related projects) is promoting and accellerating innovation in the real estate industry
+by standarding the software integration process.
 
-Community project, your feedback, suggestions and contributions are very welcome.
 
-# Base Types
+The project is 100% open and community driven, your feedback, suggestions and contributions are very welcome.
+Please contact dave@yodata.io if you'd like to get invovled or get some help implementing the existing event model.
 
-Base context: http://schema.org
+## Technical Foundatation
+This work is inspired by and based on the great work of many people and projects, essential components include
+
+- http://schema.org - base context and Actions vocabulary
+- RESO Data Dictionary - real estate listing data
+
+# Classes
 
 ## Thing
 
