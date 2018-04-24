@@ -29,7 +29,7 @@ A person (alive, dead, undead, or fictional).
 
 Entities that have a somewhat fixed, physical extension.
 
-## Organization(/entity/Organization/index.md)
+## Organization [https://github.com/RealEstateSchema/entity/Organization/index.md]
 
 A Company, Office or Team that has members.
 
