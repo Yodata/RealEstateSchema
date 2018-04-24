@@ -1,0 +1,162 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+schema:Thing a rdfs:Class ;
+    rdfs:label "Thing" ;
+    rdfs:comment "The most generic type of item." .
+
+schema:Event rdfs:subClassOf schema:Thing .
+
+schema:Intangible rdfs:subClassOf schema:Thing .
+
+schema:MedicalEntity rdfs:subClassOf schema:Thing .
+
+schema:Organization rdfs:subClassOf schema:Thing .
+
+schema:Person rdfs:subClassOf schema:Thing .
+
+schema:Place rdfs:subClassOf schema:Thing .
+
+schema:Product rdfs:subClassOf schema:Thing .
+
+schema:about schema:rangeIncludes schema:Thing .
+
+schema:actionOption schema:rangeIncludes schema:Thing .
+
+schema:additionalType a rdf:Property ;
+    rdfs:label "additionalType" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:URL ;
+    rdfs:comment "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally." ;
+    rdfs:subPropertyOf rdf:type .
+
+schema:alternateName a rdf:Property ;
+    rdfs:label "alternateName" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "An alias for the item." .
+
+schema:category schema:rangeIncludes schema:Thing .
+
+schema:characterAttribute schema:rangeIncludes schema:Thing .
+
+schema:collection schema:rangeIncludes schema:Thing .
+
+schema:dataFeedElement schema:rangeIncludes schema:Thing .
+
+schema:defaultValue schema:rangeIncludes schema:Thing .
+
+schema:disambiguatingDescription a rdf:Property ;
+    rdfs:label "disambiguatingDescription" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation." ;
+    rdfs:subPropertyOf schema:description .
+
+schema:error schema:rangeIncludes schema:Thing .
+
+schema:gameItem schema:rangeIncludes schema:Thing .
+
+schema:gamePlatform schema:rangeIncludes schema:Thing .
+
+schema:identifier a rdf:Property ;
+    rdfs:label "identifier" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:PropertyValue,
+        schema:Text,
+        schema:URL ;
+    rdfs:comment "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details." ;
+    owl:equivalentProperty dct:identifier .
+
+schema:image a rdf:Property ;
+    rdfs:label "image" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:ImageObject,
+        schema:URL ;
+    rdfs:comment "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>." .
+
+schema:instrument schema:rangeIncludes schema:Thing .
+
+schema:item schema:rangeIncludes schema:Thing .
+
+schema:itemListElement schema:rangeIncludes schema:Thing .
+
+schema:itemReviewed schema:rangeIncludes schema:Thing .
+
+schema:mainEntityOfPage a rdf:Property ;
+    rdfs:label "mainEntityOfPage" ;
+    schema:domainIncludes schema:Thing ;
+    schema:inverseOf schema:mainEntity ;
+    schema:rangeIncludes schema:CreativeWork,
+        schema:URL ;
+    rdfs:comment "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details." .
+
+schema:mentions schema:rangeIncludes schema:Thing .
+
+schema:name a rdf:Property ;
+    rdfs:label "name" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "The name of the item." .
+
+schema:object schema:rangeIncludes schema:Thing .
+
+schema:option schema:rangeIncludes schema:Thing .
+
+schema:potentialAction a rdf:Property ;
+    rdfs:label "potentialAction" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Action ;
+    rdfs:comment "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role." .
+
+schema:produces schema:rangeIncludes schema:Thing .
+
+schema:purpose schema:rangeIncludes schema:Thing .
+
+schema:quest schema:rangeIncludes schema:Thing .
+
+schema:replacee schema:rangeIncludes schema:Thing .
+
+schema:replacer schema:rangeIncludes schema:Thing .
+
+schema:requiredCollateral schema:rangeIncludes schema:Thing .
+
+schema:reservationFor schema:rangeIncludes schema:Thing .
+
+schema:result schema:rangeIncludes schema:Thing .
+
+schema:sameAs a rdf:Property ;
+    rdfs:label "sameAs" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:URL ;
+    rdfs:comment "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." .
+
+schema:serviceOutput schema:rangeIncludes schema:Thing .
+
+schema:targetCollection schema:rangeIncludes schema:Thing .
+
+schema:url a rdf:Property ;
+    rdfs:label "url" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:URL ;
+    rdfs:comment "URL of the item." .
+
+schema:Action rdfs:subClassOf schema:Thing .
+
+schema:CreativeWork rdfs:subClassOf schema:Thing .
+
+schema:description a rdf:Property ;
+    rdfs:label "description" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "A description of the item." ;
+    owl:equivalentProperty dct:description .
+
+schema:mainEntity schema:rangeIncludes schema:Thing .
+

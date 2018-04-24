@@ -1,0 +1,775 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+schema:Organization a rdfs:Class ;
+    rdfs:label "Organization" ;
+    rdfs:comment "An organization such as a school, NGO, corporation, club, etc." ;
+    rdfs:subClassOf schema:Thing .
+
+schema:Thing a rdfs:Class ;
+    rdfs:label "Thing" ;
+    rdfs:comment "The most generic type of item." .
+
+<http://publications.europa.eu/mdr/eli/index.html> a schema:Organization .
+
+schema:Airline rdfs:subClassOf schema:Organization .
+
+schema:Consortium rdfs:subClassOf schema:Organization .
+
+schema:Corporation rdfs:subClassOf schema:Organization .
+
+schema:GovernmentOrganization rdfs:subClassOf schema:Organization .
+
+schema:LibrarySystem rdfs:subClassOf schema:Organization .
+
+schema:LocalBusiness rdfs:subClassOf schema:Organization .
+
+schema:MedicalOrganization rdfs:subClassOf schema:Organization .
+
+schema:NGO rdfs:subClassOf schema:Organization .
+
+schema:PerformingGroup rdfs:subClassOf schema:Organization .
+
+schema:SportsOrganization rdfs:subClassOf schema:Organization .
+
+schema:WorkersUnion rdfs:subClassOf schema:Organization .
+
+schema:acquiredFrom schema:rangeIncludes schema:Organization .
+
+schema:actionableFeedbackPolicy a rdf:Property ;
+    rdfs:label "actionableFeedbackPolicy" ;
+    dct:source <https://github.com/schemaorg/schemaorg/issues/1525>,
+        <https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP> ;
+    schema:category "issue-1525" ;
+    schema:domainIncludes schema:NewsMediaOrganization,
+        schema:Organization ;
+    schema:isPartOf <http://pending.schema.org> ;
+    schema:rangeIncludes schema:CreativeWork,
+        schema:URL ;
+    rdfs:comment "For a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a> or other news-related <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a>, a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication." ;
+    rdfs:subPropertyOf schema:publishingPrinciples .
+
+schema:additionalType a rdf:Property ;
+    rdfs:label "additionalType" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:URL ;
+    rdfs:comment "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally." ;
+    rdfs:subPropertyOf rdf:type .
+
+schema:address a rdf:Property ;
+    rdfs:label "address" ;
+    schema:domainIncludes schema:GeoCoordinates,
+        schema:GeoShape,
+        schema:Organization,
+        schema:Person,
+        schema:Place ;
+    schema:rangeIncludes schema:PostalAddress,
+        schema:Text ;
+    rdfs:comment "Physical address of the item." .
+
+schema:affiliation schema:rangeIncludes schema:Organization .
+
+schema:agent schema:rangeIncludes schema:Organization .
+
+schema:aggregateRating a rdf:Property ;
+    rdfs:label "aggregateRating" ;
+    schema:domainIncludes schema:Brand,
+        schema:CreativeWork,
+        schema:Event,
+        schema:Offer,
+        schema:Organization,
+        schema:Place,
+        schema:Product,
+        schema:Service ;
+    schema:rangeIncludes schema:AggregateRating ;
+    rdfs:comment "The overall rating, based on a collection of reviews or ratings, of the item." .
+
+schema:alternateName a rdf:Property ;
+    rdfs:label "alternateName" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "An alias for the item." .
+
+schema:alumni a rdf:Property ;
+    rdfs:label "alumni" ;
+    schema:domainIncludes schema:EducationalOrganization,
+        schema:Organization ;
+    schema:inverseOf schema:alumniOf ;
+    schema:rangeIncludes schema:Person ;
+    rdfs:comment "Alumni of an organization." .
+
+schema:attendee schema:rangeIncludes schema:Organization .
+
+schema:attendees schema:rangeIncludes schema:Organization .
+
+schema:author schema:rangeIncludes schema:Organization .
+
+schema:awards a rdf:Property ;
+    rdfs:label "awards" ;
+    schema:domainIncludes schema:CreativeWork,
+        schema:Organization,
+        schema:Person,
+        schema:Product ;
+    schema:rangeIncludes schema:Text ;
+    schema:supersededBy schema:award ;
+    rdfs:comment "Awards won by or for this item." .
+
+schema:bccRecipient schema:rangeIncludes schema:Organization .
+
+schema:bookingAgent schema:rangeIncludes schema:Organization .
+
+schema:branchOf schema:rangeIncludes schema:Organization .
+
+schema:brand a rdf:Property ;
+    rdfs:label "brand" ;
+    schema:domainIncludes schema:Organization,
+        schema:Person,
+        schema:Product,
+        schema:Service ;
+    schema:rangeIncludes schema:Brand,
+        schema:Organization ;
+    rdfs:comment "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person." .
+
+schema:broadcastAffiliateOf schema:rangeIncludes schema:Organization .
+
+schema:broadcaster schema:rangeIncludes schema:Organization .
+
+schema:broker schema:rangeIncludes schema:Organization .
+
+schema:carrier schema:rangeIncludes schema:Organization .
+
+schema:ccRecipient schema:rangeIncludes schema:Organization .
+
+schema:composer schema:rangeIncludes schema:Organization .
+
+schema:contactPoints a rdf:Property ;
+    rdfs:label "contactPoints" ;
+    schema:domainIncludes schema:Organization,
+        schema:Person ;
+    schema:rangeIncludes schema:ContactPoint ;
+    schema:supersededBy schema:contactPoint ;
+    rdfs:comment "A contact point for a person or organization." .
+
+schema:contributor schema:rangeIncludes schema:Organization .
+
+schema:copyrightHolder schema:rangeIncludes schema:Organization .
+
+schema:correctionsPolicy a rdf:Property ;
+    rdfs:label "correctionsPolicy" ;
+    dct:source <https://github.com/schemaorg/schemaorg/issues/1525>,
+        <https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP> ;
+    schema:category "issue-1525" ;
+    schema:domainIncludes schema:NewsMediaOrganization,
+        schema:Organization ;
+    schema:isPartOf <http://pending.schema.org> ;
+    schema:rangeIncludes schema:CreativeWork,
+        schema:URL ;
+    rdfs:comment "For an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> (e.g. <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a>), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors." ;
+    rdfs:subPropertyOf schema:publishingPrinciples .
+
+schema:creator schema:rangeIncludes schema:Organization .
+
+schema:creditedTo schema:rangeIncludes schema:Organization .
+
+schema:customer schema:rangeIncludes schema:Organization .
+
+schema:department a rdf:Property ;
+    rdfs:label "department" ;
+    schema:domainIncludes schema:Organization ;
+    schema:rangeIncludes schema:Organization ;
+    rdfs:comment "A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe." .
+
+schema:disambiguatingDescription a rdf:Property ;
+    rdfs:label "disambiguatingDescription" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation." ;
+    rdfs:subPropertyOf schema:description .
+
+schema:dissolutionDate a rdf:Property ;
+    rdfs:label "dissolutionDate" ;
+    schema:domainIncludes schema:Organization ;
+    schema:rangeIncludes schema:Date ;
+    rdfs:comment "The date that this organization was dissolved." .
+
+schema:diversityPolicy a rdf:Property ;
+    rdfs:label "diversityPolicy" ;
+    dct:source <https://github.com/schemaorg/schemaorg/issues/1525>,
+        <https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP> ;
+    schema:category "issue-1525" ;
+    schema:domainIncludes schema:NewsMediaOrganization,
+        schema:Organization ;
+    schema:isPartOf <http://pending.schema.org> ;
+    schema:rangeIncludes schema:CreativeWork,
+        schema:URL ;
+    rdfs:comment "Statement on diversity policy by an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> e.g. a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a>. For a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a>, a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data." .
+
+schema:duns a rdf:Property ;
+    rdfs:label "duns" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:Organization,
+        schema:Person ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "The Dun &amp; Bradstreet DUNS number for identifying an organization or business person." ;
+    rdfs:subPropertyOf schema:identifier .
+
+schema:email a rdf:Property ;
+    rdfs:label "email" ;
+    schema:domainIncludes schema:ContactPoint,
+        schema:Organization,
+        schema:Person ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Email address." .
+
+schema:employees a rdf:Property ;
+    rdfs:label "employees" ;
+    schema:domainIncludes schema:Organization ;
+    schema:rangeIncludes schema:Person ;
+    schema:supersededBy schema:employee ;
+    rdfs:comment "People working for this organization." .
+
+schema:endorsee schema:rangeIncludes schema:Organization .
+
+schema:endorsers schema:rangeIncludes schema:Organization .
+
+schema:ethicsPolicy a rdf:Property ;
+    rdfs:label "ethicsPolicy" ;
+    dct:source <https://github.com/schemaorg/schemaorg/issues/1525> ;
+    schema:category "issue-1525" ;
+    schema:domainIncludes schema:NewsMediaOrganization,
+        schema:Organization ;
+    schema:isPartOf <http://pending.schema.org> ;
+    schema:rangeIncludes schema:CreativeWork,
+        schema:URL ;
+    rdfs:comment "Statement about ethics policy, e.g. of a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a> regarding journalistic and publishing practices, or of a <a class=\"localLink\" href=\"http://schema.org/Restaurant\">Restaurant</a>, a page describing food source policies. In the case of a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a>, an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization." .
+
+schema:events a rdf:Property ;
+    rdfs:label "events" ;
+    schema:domainIncludes schema:Organization,
+        schema:Place ;
+    schema:rangeIncludes schema:Event ;
+    schema:supersededBy schema:event ;
+    rdfs:comment "Upcoming or past events associated with this place or organization." .
+
+schema:faxNumber a rdf:Property ;
+    rdfs:label "faxNumber" ;
+    schema:domainIncludes schema:ContactPoint,
+        schema:Organization,
+        schema:Person,
+        schema:Place ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "The fax number." .
+
+schema:followee schema:rangeIncludes schema:Organization .
+
+schema:founders a rdf:Property ;
+    rdfs:label "founders" ;
+    schema:domainIncludes schema:Organization ;
+    schema:rangeIncludes schema:Person ;
+    schema:supersededBy schema:founder ;
+    rdfs:comment "A person who founded this organization." .
+
+schema:foundingDate a rdf:Property ;
+    rdfs:label "foundingDate" ;
+    schema:domainIncludes schema:Organization ;
+    schema:rangeIncludes schema:Date ;
+    rdfs:comment "The date that this organization was founded." .
+
+schema:foundingLocation a rdf:Property ;
+    rdfs:label "foundingLocation" ;
+    schema:domainIncludes schema:Organization ;
+    schema:rangeIncludes schema:Place ;
+    rdfs:comment "The place where the Organization was founded." .
+
+schema:funder a rdf:Property ;
+    rdfs:label "funder" ;
+    schema:domainIncludes schema:CreativeWork,
+        schema:Event,
+        schema:Organization,
+        schema:Person ;
+    schema:rangeIncludes schema:Organization,
+        schema:Person ;
+    rdfs:comment "A person or organization that supports (sponsors) something through some kind of financial contribution." ;
+    rdfs:subPropertyOf schema:sponsor .
+
+schema:globalLocationNumber a rdf:Property ;
+    rdfs:label "globalLocationNumber" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:Organization,
+        schema:Person,
+        schema:Place ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "The <a href=\"http://www.gs1.org/gln\">Global Location Number</a> (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations." ;
+    rdfs:subPropertyOf schema:identifier .
+
+schema:grantee schema:rangeIncludes schema:Organization .
+
+schema:hasOfferCatalog a rdf:Property ;
+    rdfs:label "hasOfferCatalog" ;
+    schema:domainIncludes schema:Organization,
+        schema:Person,
+        schema:Service ;
+    schema:rangeIncludes schema:OfferCatalog ;
+    rdfs:comment "Indicates an OfferCatalog listing for this Organization, Person, or Service." .
+
+schema:hasPOS a rdf:Property ;
+    rdfs:label "hasPOS" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:Organization,
+        schema:Person ;
+    schema:rangeIncludes schema:Place ;
+    rdfs:comment "Points-of-Sales operated by the organization or person." .
+
+schema:hiringOrganization schema:rangeIncludes schema:Organization .
+
+schema:hostingOrganization schema:rangeIncludes schema:Organization .
+
+schema:isicV4 a rdf:Property ;
+    rdfs:label "isicV4" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:Organization,
+        schema:Person,
+        schema:Place ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place." .
+
+schema:issuedBy schema:rangeIncludes schema:Organization .
+
+schema:landlord schema:rangeIncludes schema:Organization .
+
+schema:legalName a rdf:Property ;
+    rdfs:label "legalName" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:Organization ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "The official name of the organization, e.g. the registered company name." .
+
+schema:legislationPassedBy schema:rangeIncludes schema:Organization .
+
+schema:legislationResponsible schema:rangeIncludes schema:Organization .
+
+schema:leiCode a rdf:Property ;
+    rdfs:label "leiCode" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO>,
+        <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF> ;
+    schema:domainIncludes schema:Organization ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "An organization identifier that uniquely identifies a legal entity as defined in ISO 17442." ;
+    rdfs:subPropertyOf schema:identifier .
+
+schema:lender schema:rangeIncludes schema:Organization .
+
+schema:location a rdf:Property ;
+    rdfs:label "location" ;
+    schema:domainIncludes schema:Action,
+        schema:Event,
+        schema:Organization ;
+    schema:rangeIncludes schema:Place,
+        schema:PostalAddress,
+        schema:Text ;
+    rdfs:comment "The location of for example where the event is happening, an organization is located, or where an action takes place." .
+
+schema:logo a rdf:Property ;
+    rdfs:label "logo" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:Brand,
+        schema:Organization,
+        schema:Place,
+        schema:Product,
+        schema:Service ;
+    schema:rangeIncludes schema:ImageObject,
+        schema:URL ;
+    rdfs:comment "An associated logo." ;
+    rdfs:subPropertyOf schema:image .
+
+schema:mainEntityOfPage a rdf:Property ;
+    rdfs:label "mainEntityOfPage" ;
+    schema:domainIncludes schema:Thing ;
+    schema:inverseOf schema:mainEntity ;
+    schema:rangeIncludes schema:CreativeWork,
+        schema:URL ;
+    rdfs:comment "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details." .
+
+schema:makesOffer a rdf:Property ;
+    rdfs:label "makesOffer" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:Organization,
+        schema:Person ;
+    schema:inverseOf schema:offeredBy ;
+    schema:rangeIncludes schema:Offer ;
+    rdfs:comment "A pointer to products or services offered by the organization or person." .
+
+schema:manufacturer schema:rangeIncludes schema:Organization .
+
+schema:members a rdf:Property ;
+    rdfs:label "members" ;
+    schema:domainIncludes schema:Organization,
+        schema:ProgramMembership ;
+    schema:rangeIncludes schema:Organization,
+        schema:Person ;
+    schema:supersededBy schema:member ;
+    rdfs:comment "A member of this organization." .
+
+schema:merchant schema:rangeIncludes schema:Organization .
+
+schema:naics a rdf:Property ;
+    rdfs:label "naics" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:Organization,
+        schema:Person ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "The North American Industry Classification System (NAICS) code for a particular organization or business person." .
+
+schema:name a rdf:Property ;
+    rdfs:label "name" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "The name of the item." .
+
+schema:numberOfEmployees a rdf:Property ;
+    rdfs:label "numberOfEmployees" ;
+    schema:domainIncludes schema:BusinessAudience,
+        schema:Organization ;
+    schema:rangeIncludes schema:QuantitativeValue ;
+    rdfs:comment "The number of employees in an organization e.g. business." .
+
+schema:organizer schema:rangeIncludes schema:Organization .
+
+schema:owns a rdf:Property ;
+    rdfs:label "owns" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:Organization,
+        schema:Person ;
+    schema:rangeIncludes schema:OwnershipInfo,
+        schema:Product ;
+    rdfs:comment "Products owned by the organization or person." .
+
+schema:participant schema:rangeIncludes schema:Organization .
+
+schema:performer schema:rangeIncludes schema:Organization .
+
+schema:performers schema:rangeIncludes schema:Organization .
+
+schema:potentialAction a rdf:Property ;
+    rdfs:label "potentialAction" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Action ;
+    rdfs:comment "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role." .
+
+schema:producer schema:rangeIncludes schema:Organization .
+
+schema:productionCompany schema:rangeIncludes schema:Organization .
+
+schema:provider schema:rangeIncludes schema:Organization .
+
+schema:publishedBy schema:rangeIncludes schema:Organization .
+
+schema:publisher schema:rangeIncludes schema:Organization .
+
+schema:publisherImprint schema:rangeIncludes schema:Organization .
+
+schema:recipient schema:rangeIncludes schema:Organization .
+
+schema:recognizingAuthority schema:rangeIncludes schema:Organization .
+
+schema:recordLabel schema:rangeIncludes schema:Organization .
+
+schema:reviewedBy schema:rangeIncludes schema:Organization .
+
+schema:reviews a rdf:Property ;
+    rdfs:label "reviews" ;
+    schema:domainIncludes schema:CreativeWork,
+        schema:Offer,
+        schema:Organization,
+        schema:Place,
+        schema:Product ;
+    schema:rangeIncludes schema:Review ;
+    schema:supersededBy schema:review ;
+    rdfs:comment "Review of the item." .
+
+schema:sameAs a rdf:Property ;
+    rdfs:label "sameAs" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:URL ;
+    rdfs:comment "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." .
+
+schema:seeks a rdf:Property ;
+    rdfs:label "seeks" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:Organization,
+        schema:Person ;
+    schema:rangeIncludes schema:Demand ;
+    rdfs:comment "A pointer to products or services sought by the organization or person (demand)." .
+
+schema:seller schema:rangeIncludes schema:Organization .
+
+schema:sender schema:rangeIncludes schema:Organization .
+
+schema:serviceArea a rdf:Property ;
+    rdfs:label "serviceArea" ;
+    schema:domainIncludes schema:ContactPoint,
+        schema:Organization,
+        schema:Service ;
+    schema:rangeIncludes schema:AdministrativeArea,
+        schema:GeoShape,
+        schema:Place ;
+    schema:supersededBy schema:areaServed ;
+    rdfs:comment "The geographic area where the service is provided." .
+
+schema:serviceOperator schema:rangeIncludes schema:Organization .
+
+schema:sourceOrganization schema:rangeIncludes schema:Organization .
+
+schema:spokenByCharacter schema:rangeIncludes schema:Organization .
+
+schema:taxID a rdf:Property ;
+    rdfs:label "taxID" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:Organization,
+        schema:Person ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain." ;
+    rdfs:subPropertyOf schema:identifier .
+
+schema:telephone a rdf:Property ;
+    rdfs:label "telephone" ;
+    schema:domainIncludes schema:ContactPoint,
+        schema:Organization,
+        schema:Person,
+        schema:Place ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "The telephone number." .
+
+schema:toRecipient schema:rangeIncludes schema:Organization .
+
+schema:translator schema:rangeIncludes schema:Organization .
+
+schema:underName schema:rangeIncludes schema:Organization .
+
+schema:unnamedSourcesPolicy a rdf:Property ;
+    rdfs:label "unnamedSourcesPolicy" ;
+    dct:source <https://github.com/schemaorg/schemaorg/issues/1525>,
+        <https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP> ;
+    schema:category "issue-1525" ;
+    schema:domainIncludes schema:NewsMediaOrganization,
+        schema:Organization ;
+    schema:isPartOf <http://pending.schema.org> ;
+    schema:rangeIncludes schema:CreativeWork,
+        schema:URL ;
+    rdfs:comment "For an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> (typically a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a>), a statement about policy on use of unnamed sources and the decision process required." ;
+    rdfs:subPropertyOf schema:publishingPrinciples .
+
+schema:url a rdf:Property ;
+    rdfs:label "url" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:URL ;
+    rdfs:comment "URL of the item." .
+
+schema:vatID a rdf:Property ;
+    rdfs:label "vatID" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:Organization,
+        schema:Person ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "The Value-added Tax ID of the organization or person." .
+
+schema:vendor schema:rangeIncludes schema:Organization .
+
+schema:worksFor schema:rangeIncludes schema:Organization .
+
+<http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group> a schema:Organization .
+
+<http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it> a schema:Organization .
+
+<http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ> a schema:Organization .
+
+<http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism> a schema:Organization .
+
+<http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass> a schema:Organization .
+
+<http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass> a schema:Organization .
+
+<http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass> a schema:Organization .
+
+<http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_LRMIClass> a schema:Organization .
+
+<http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_QAStackExchange> a schema:Organization .
+
+<http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_WikiDoc> a schema:Organization .
+
+<http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex> a schema:Organization .
+
+<http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews> a schema:Organization .
+
+<https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology> a schema:Organization .
+
+<https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP-draws> a schema:Organization .
+
+schema:EducationalOrganization rdfs:subClassOf schema:Organization .
+
+schema:alumniOf schema:rangeIncludes schema:Organization .
+
+schema:areaServed a rdf:Property ;
+    rdfs:label "areaServed" ;
+    schema:domainIncludes schema:ContactPoint,
+        schema:DeliveryChargeSpecification,
+        schema:Demand,
+        schema:Offer,
+        schema:Organization,
+        schema:Service ;
+    schema:rangeIncludes schema:AdministrativeArea,
+        schema:GeoShape,
+        schema:Place,
+        schema:Text ;
+    rdfs:comment "The geographic area where a service or offered item is provided." .
+
+schema:award a rdf:Property ;
+    rdfs:label "award" ;
+    schema:domainIncludes schema:CreativeWork,
+        schema:Organization,
+        schema:Person,
+        schema:Product,
+        schema:Service ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "An award won by or for this item." .
+
+schema:contactPoint a rdf:Property ;
+    rdfs:label "contactPoint" ;
+    schema:domainIncludes schema:HealthInsurancePlan,
+        schema:Organization,
+        schema:Person ;
+    schema:rangeIncludes schema:ContactPoint ;
+    rdfs:comment "A contact point for a person or organization." .
+
+schema:description a rdf:Property ;
+    rdfs:label "description" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "A description of the item." ;
+    owl:equivalentProperty dct:description .
+
+schema:employee a rdf:Property ;
+    rdfs:label "employee" ;
+    schema:domainIncludes schema:Organization ;
+    schema:rangeIncludes schema:Person ;
+    rdfs:comment "Someone working for this organization." .
+
+schema:event a rdf:Property ;
+    rdfs:label "event" ;
+    schema:domainIncludes schema:InformAction,
+        schema:InviteAction,
+        schema:JoinAction,
+        schema:LeaveAction,
+        schema:Organization,
+        schema:Place,
+        schema:PlayAction ;
+    schema:rangeIncludes schema:Event ;
+    rdfs:comment "Upcoming or past event associated with this place, organization, or action." .
+
+schema:founder a rdf:Property ;
+    rdfs:label "founder" ;
+    schema:domainIncludes schema:Organization ;
+    schema:rangeIncludes schema:Person ;
+    rdfs:comment "A person who founded this organization." .
+
+schema:image a rdf:Property ;
+    rdfs:label "image" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:ImageObject,
+        schema:URL ;
+    rdfs:comment "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>." .
+
+schema:memberOf a rdf:Property ;
+    rdfs:label "memberOf" ;
+    schema:domainIncludes schema:Organization,
+        schema:Person ;
+    schema:inverseOf schema:member ;
+    schema:rangeIncludes schema:Organization,
+        schema:ProgramMembership ;
+    rdfs:comment "An Organization (or ProgramMembership) to which this Person or Organization belongs." .
+
+schema:offeredBy schema:rangeIncludes schema:Organization .
+
+schema:parentOrganization a rdf:Property ;
+    rdfs:label "parentOrganization" ;
+    schema:domainIncludes schema:Organization ;
+    schema:inverseOf schema:subOrganization ;
+    schema:rangeIncludes schema:Organization ;
+    rdfs:comment "The larger organization that this organization is a <a class=\"localLink\" href=\"http://schema.org/subOrganization\">subOrganization</a> of, if any." .
+
+schema:review a rdf:Property ;
+    rdfs:label "review" ;
+    schema:domainIncludes schema:Brand,
+        schema:CreativeWork,
+        schema:Event,
+        schema:Offer,
+        schema:Organization,
+        schema:Place,
+        schema:Product,
+        schema:Service ;
+    schema:rangeIncludes schema:Review ;
+    rdfs:comment "A review of the item." .
+
+schema:sponsor a rdf:Property ;
+    rdfs:label "sponsor" ;
+    schema:domainIncludes schema:CreativeWork,
+        schema:Event,
+        schema:MedicalStudy,
+        schema:Organization,
+        schema:Person ;
+    schema:rangeIncludes schema:Organization,
+        schema:Person ;
+    rdfs:comment "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event." .
+
+schema:subOrganization a rdf:Property ;
+    rdfs:label "subOrganization" ;
+    schema:domainIncludes schema:Organization ;
+    schema:inverseOf schema:parentOrganization ;
+    schema:rangeIncludes schema:Organization ;
+    rdfs:comment "A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property." .
+
+<http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO> a schema:Organization .
+
+<http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF> a schema:Organization .
+
+schema:member a rdf:Property ;
+    rdfs:label "member" ;
+    schema:domainIncludes schema:Organization,
+        schema:ProgramMembership ;
+    schema:inverseOf schema:memberOf ;
+    schema:rangeIncludes schema:Organization,
+        schema:Person ;
+    rdfs:comment "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals." .
+
+schema:publishingPrinciples a rdf:Property ;
+    rdfs:label "publishingPrinciples" ;
+    schema:domainIncludes schema:CreativeWork,
+        schema:Organization,
+        schema:Person ;
+    schema:rangeIncludes schema:CreativeWork,
+        schema:URL ;
+    rdfs:comment """The publishingPrinciples property indicates (typically via <a class="localLink" href="http://schema.org/URL">URL</a>) a document describing the editorial principles of an <a class="localLink" href="http://schema.org/Organization">Organization</a> (or individual e.g. a <a class="localLink" href="http://schema.org/Person">Person</a> writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a <a class="localLink" href="http://schema.org/CreativeWork">CreativeWork</a> (e.g. <a class="localLink" href="http://schema.org/NewsArticle">NewsArticle</a>) the principles are those of the party primarily responsible for the creation of the <a class="localLink" href="http://schema.org/CreativeWork">CreativeWork</a>.</p>
+
+<p>While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a <a class="localLink" href="http://schema.org/funder">funder</a>) can be expressed using schema.org terminology.""" .
+
+schema:identifier a rdf:Property ;
+    rdfs:label "identifier" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:PropertyValue,
+        schema:Text,
+        schema:URL ;
+    rdfs:comment "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details." ;
+    owl:equivalentProperty dct:identifier .
+
+<https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP> a schema:Organization .
+
+schema:NewsMediaOrganization rdfs:subClassOf schema:Organization .
+
+<http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> a schema:Organization .
+
