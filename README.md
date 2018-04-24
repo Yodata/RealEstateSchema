@@ -29,9 +29,9 @@ A person (alive, dead, undead, or fictional).
 
 Entities that have a somewhat fixed, physical extension.
 
-## Organization
+## Organization(/entity/Organization/index.md)
 
-A group, club or other entity that represents a collection of members.
+A Company, Office or Team that has members.
 
 ## Event
 
