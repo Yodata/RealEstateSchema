@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:schema="http://schema.org/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Property rdf:about="http://schema.org/name">
+    <rdfs:label>name</rdfs:label>
+    <rdfs:comment>The name of the item.</rdfs:comment>
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Text"/>
+  </rdf:Property>
+  <rdf:Description rdf:about="http://schema.org/purpose">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Property rdf:about="http://schema.org/alternateName">
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+    <rdfs:label>alternateName</rdfs:label>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Text"/>
+    <rdfs:comment>An alias for the item.</rdfs:comment>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/disambiguatingDescription">
+    <rdfs:comment>A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <rdf:Property rdf:about="http://schema.org/description">
+        <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+        <owl:equivalentProperty rdf:resource="http://purl.org/dc/terms/description"/>
+        <rdfs:label>description</rdfs:label>
+        <schema:rangeIncludes rdf:resource="http://schema.org/Text"/>
+        <rdfs:comment>A description of the item.</rdfs:comment>
+      </rdf:Property>
+    </rdfs:subPropertyOf>
+    <rdfs:label>disambiguatingDescription</rdfs:label>
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Text"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/potentialAction">
+    <schema:rangeIncludes>
+      <rdf:Description rdf:about="http://schema.org/Action">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Thing"/>
+      </rdf:Description>
+    </schema:rangeIncludes>
+    <rdfs:comment>Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.</rdfs:comment>
+    <rdfs:label>potentialAction</rdfs:label>
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/identifier">
+    <schema:rangeIncludes rdf:resource="http://schema.org/URL"/>
+    <owl:equivalentProperty rdf:resource="http://purl.org/dc/terms/identifier"/>
+    <rdfs:comment><![CDATA[The identifier property represents any kind of identifier for any kind of <a class="localLink" href="http://schema.org/Thing">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href="/docs/datamodel.html#identifierBg">background notes</a> for more details.]]></rdfs:comment>
+    <schema:rangeIncludes rdf:resource="http://schema.org/Text"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/PropertyValue"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+    <rdfs:label>identifier</rdfs:label>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/url">
+    <rdfs:comment>URL of the item.</rdfs:comment>
+    <schema:rangeIncludes rdf:resource="http://schema.org/URL"/>
+    <rdfs:label>url</rdfs:label>
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://schema.org/mainEntityOfPage">
+    <schema:rangeIncludes rdf:resource="http://schema.org/URL"/>
+    <rdfs:comment><![CDATA[Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href="/docs/datamodel.html#mainEntityBackground">background notes</a> for details.]]></rdfs:comment>
+    <schema:rangeIncludes>
+      <rdf:Description rdf:about="http://schema.org/CreativeWork">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Thing"/>
+      </rdf:Description>
+    </schema:rangeIncludes>
+    <rdfs:label>mainEntityOfPage</rdfs:label>
+    <schema:inverseOf>
+      <rdf:Description rdf:about="http://schema.org/mainEntity">
+        <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+      </rdf:Description>
+    </schema:inverseOf>
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Property>
+  <rdf:Description rdf:about="http://schema.org/reservationFor">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Property rdf:about="http://schema.org/image">
+    <schema:rangeIncludes rdf:resource="http://schema.org/ImageObject"/>
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/URL"/>
+    <rdfs:label>image</rdfs:label>
+    <rdfs:comment><![CDATA[An image of the item. This can be a <a class="localLink" href="http://schema.org/URL">URL</a> or a fully described <a class="localLink" href="http://schema.org/ImageObject">ImageObject</a>.]]></rdfs:comment>
+  </rdf:Property>
+  <rdf:Description rdf:about="http://schema.org/category">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/requiredCollateral">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/actionOption">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/characterAttribute">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Property rdf:about="http://schema.org/additionalType">
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+    <rdfs:label>additionalType</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <rdfs:comment>An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.</rdfs:comment>
+    <schema:rangeIncludes rdf:resource="http://schema.org/URL"/>
+  </rdf:Property>
+  <rdf:Description rdf:about="http://schema.org/quest">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/result">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Property rdf:about="http://schema.org/sameAs">
+    <schema:domainIncludes rdf:resource="http://schema.org/Thing"/>
+    <schema:rangeIncludes rdf:resource="http://schema.org/URL"/>
+    <rdfs:label>sameAs</rdfs:label>
+    <rdfs:comment>URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.</rdfs:comment>
+  </rdf:Property>
+  <rdf:Description rdf:about="http://schema.org/error">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/Person">
+    <rdfs:subClassOf rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/Organization">
+    <rdfs:subClassOf rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/serviceOutput">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/mentions">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/collection">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/gamePlatform">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/replacer">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/defaultValue">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/Intangible">
+    <rdfs:subClassOf rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/itemListElement">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/instrument">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/item">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/about">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/replacee">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/Place">
+    <rdfs:subClassOf rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/gameItem">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/Event">
+    <rdfs:subClassOf rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/Product">
+    <rdfs:subClassOf rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/dataFeedElement">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/option">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/produces">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/object">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/MedicalEntity">
+    <rdfs:subClassOf rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/itemReviewed">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.org/targetCollection">
+    <schema:rangeIncludes rdf:resource="http://schema.org/Thing"/>
+  </rdf:Description>
+  <rdfs:Class rdf:about="http://schema.org/Thing">
+    <rdfs:label>Thing</rdfs:label>
+    <rdfs:comment>The most generic type of item.</rdfs:comment>
+  </rdfs:Class>
+</rdf:RDF>

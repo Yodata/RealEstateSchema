@@ -1,0 +1,216 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+schema:Intangible a rdfs:Class ;
+    rdfs:label "Intangible" ;
+    rdfs:comment "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc." ;
+    rdfs:subClassOf schema:Thing .
+
+schema:PropertyValue a rdfs:Class ;
+    rdfs:label "PropertyValue" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass> ;
+    rdfs:comment """A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.</p>
+
+<p>Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.""" ;
+    rdfs:subClassOf schema:StructuredValue .
+
+schema:StructuredValue a rdfs:Class ;
+    rdfs:label "StructuredValue" ;
+    rdfs:comment "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing." ;
+    rdfs:subClassOf schema:Intangible .
+
+schema:Thing a rdfs:Class ;
+    rdfs:label "Thing" ;
+    rdfs:comment "The most generic type of item." .
+
+schema:LocationFeatureSpecification rdfs:subClassOf schema:PropertyValue .
+
+schema:additionalProperty schema:rangeIncludes schema:PropertyValue .
+
+schema:additionalType a rdf:Property ;
+    rdfs:label "additionalType" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:URL ;
+    rdfs:comment "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally." ;
+    rdfs:subPropertyOf rdf:type .
+
+schema:alternateName a rdf:Property ;
+    rdfs:label "alternateName" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "An alias for the item." .
+
+schema:disambiguatingDescription a rdf:Property ;
+    rdfs:label "disambiguatingDescription" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation." ;
+    rdfs:subPropertyOf schema:description .
+
+schema:exifData schema:rangeIncludes schema:PropertyValue .
+
+schema:identifier a rdf:Property ;
+    rdfs:label "identifier" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:PropertyValue,
+        schema:Text,
+        schema:URL ;
+    rdfs:comment "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details." ;
+    owl:equivalentProperty dct:identifier .
+
+schema:image a rdf:Property ;
+    rdfs:label "image" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:ImageObject,
+        schema:URL ;
+    rdfs:comment "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>." .
+
+schema:mainEntityOfPage a rdf:Property ;
+    rdfs:label "mainEntityOfPage" ;
+    schema:domainIncludes schema:Thing ;
+    schema:inverseOf schema:mainEntity ;
+    schema:rangeIncludes schema:CreativeWork,
+        schema:URL ;
+    rdfs:comment "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details." .
+
+schema:maxValue a rdf:Property ;
+    rdfs:label "maxValue" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:MonetaryAmount,
+        schema:PropertyValue,
+        schema:PropertyValueSpecification,
+        schema:QuantitativeValue ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "The upper value of some characteristic or property." .
+
+schema:measurementTechnique a rdf:Property ;
+    rdfs:label "measurementTechnique" ;
+    dct:source <https://github.com/schemaorg/schemaorg/issues/1425> ;
+    schema:category "issue-1425" ;
+    schema:domainIncludes schema:DataCatalog,
+        schema:DataDownload,
+        schema:Dataset,
+        schema:PropertyValue ;
+    schema:isPartOf <http://pending.schema.org> ;
+    schema:rangeIncludes schema:Text,
+        schema:URL ;
+    rdfs:comment """A technique or technology used in a <a class="localLink" href="http://schema.org/Dataset">Dataset</a> (or <a class="localLink" href="http://schema.org/DataDownload">DataDownload</a>, <a class="localLink" href="http://schema.org/DataCatalog">DataCatalog</a>),
+corresponding to the method used for measuring the corresponding variable(s) (described using <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a>). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.</p>
+
+<p>For example, if <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> is: molecule concentration, <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a> could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence".</p>
+
+<p>If the <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> is "depression rating", the <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a> could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory".</p>
+
+<p>If there are several <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> properties recorded for some given data object, use a <a class="localLink" href="http://schema.org/PropertyValue">PropertyValue</a> for each <a class="localLink" href="http://schema.org/variableMeasured">variableMeasured</a> and attach the corresponding <a class="localLink" href="http://schema.org/measurementTechnique">measurementTechnique</a>.""" .
+
+schema:minValue a rdf:Property ;
+    rdfs:label "minValue" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:MonetaryAmount,
+        schema:PropertyValue,
+        schema:PropertyValueSpecification,
+        schema:QuantitativeValue ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "The lower value of some characteristic or property." .
+
+schema:name a rdf:Property ;
+    rdfs:label "name" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "The name of the item." .
+
+schema:potentialAction a rdf:Property ;
+    rdfs:label "potentialAction" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Action ;
+    rdfs:comment "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role." .
+
+schema:propertyID a rdf:Property ;
+    rdfs:label "propertyID" ;
+    schema:domainIncludes schema:PropertyValue ;
+    schema:rangeIncludes schema:Text,
+        schema:URL ;
+    rdfs:comment """A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
+(1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific id of the property), or (3)
+a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
+Standards bodies should promote a standard prefix for the identifiers of properties from their standards.""" .
+
+schema:sameAs a rdf:Property ;
+    rdfs:label "sameAs" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:URL ;
+    rdfs:comment "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." .
+
+schema:unitCode a rdf:Property ;
+    rdfs:label "unitCode" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:PropertyValue,
+        schema:QuantitativeValue,
+        schema:TypeAndQuantityNode,
+        schema:UnitPriceSpecification ;
+    schema:rangeIncludes schema:Text,
+        schema:URL ;
+    rdfs:comment "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon." .
+
+schema:unitText a rdf:Property ;
+    rdfs:label "unitText" ;
+    schema:domainIncludes schema:PropertyValue,
+        schema:QuantitativeValue,
+        schema:TypeAndQuantityNode,
+        schema:UnitPriceSpecification ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment """A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+<a href='unitCode'>unitCode</a>.""" .
+
+schema:url a rdf:Property ;
+    rdfs:label "url" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:URL ;
+    rdfs:comment "URL of the item." .
+
+schema:value a rdf:Property ;
+    rdfs:label "value" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:MonetaryAmount,
+        schema:PropertyValue,
+        schema:QuantitativeValue ;
+    schema:rangeIncludes schema:Boolean,
+        schema:Number,
+        schema:StructuredValue,
+        schema:Text ;
+    rdfs:comment """<p>The value of the quantitative value or property value node.</p>
+
+<ul>
+<li>For <a class="localLink" href="http://schema.org/QuantitativeValue">QuantitativeValue</a> and <a class="localLink" href="http://schema.org/MonetaryAmount">MonetaryAmount</a>, the recommended type for values is 'Number'.</li>
+<li>For <a class="localLink" href="http://schema.org/PropertyValue">PropertyValue</a>, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.</li>
+</ul>
+""" .
+
+schema:valueReference a rdf:Property ;
+    rdfs:label "valueReference" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms> ;
+    schema:domainIncludes schema:PropertyValue,
+        schema:QualitativeValue,
+        schema:QuantitativeValue ;
+    schema:rangeIncludes schema:Enumeration,
+        schema:PropertyValue,
+        schema:QualitativeValue,
+        schema:QuantitativeValue,
+        schema:StructuredValue ;
+    rdfs:comment "A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature." .
+
+schema:variableMeasured schema:rangeIncludes schema:PropertyValue .
+
+schema:description a rdf:Property ;
+    rdfs:label "description" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "A description of the item." ;
+    owl:equivalentProperty dct:description .
+

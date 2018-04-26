@@ -1,0 +1,26 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+schema:DataType a rdfs:Class ;
+    rdfs:label "DataType" ;
+    rdfs:comment "The basic data types such as Integers, Strings, etc." ;
+    rdfs:subClassOf rdfs:Class .
+
+schema:Boolean a schema:DataType .
+
+schema:Date a schema:DataType .
+
+schema:DateTime a schema:DataType .
+
+schema:Number a schema:DataType .
+
+schema:Text a schema:DataType .
+
+schema:Time a schema:DataType .
+
