@@ -1,7 +1,36 @@
-# Real Estate Actions for Software Integration
+# Real Estate Schema: Actions
 
-## Actions for Creating and Updating Entities
+Actions, based on [schema.org/Action](http://schema.org/Action) enable real-time application integration.
 
-These actions are broadly used to express changes to a specific resource.
+### Common Properties
 
-### Add Action
+
+```json
+<!--  John listened to Pink with Steve at Anna's apartment on his iPod. -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "ListenAction",
+  "agent": {
+    "@type": "Person",
+    "name": "John"
+  },
+  "object": {
+    "@type": "MusicGroup",
+    "name": "Pink!"
+  },
+  "participant": {
+    "@type": "Person",
+    "name": "Steve"
+  },
+  "location": {
+    "@type": "Residence",
+    "name": "Ann's apartment"
+  },
+  "instrument": {
+    "@type": "Product",
+    "name": "iPod"
+  }
+}
+</script>
+```

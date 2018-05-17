@@ -1,0 +1,204 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+schema:Action a rdfs:Class ;
+    rdfs:label "Action" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass> ;
+    rdfs:comment """An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.</p>
+
+<p>See also <a href="http://blog.schema.org/2014/04/announcing-schemaorg-actions.html">blog post</a> and <a href="http://schema.org/docs/actions.html">Actions overview document</a>.""" ;
+    rdfs:subClassOf schema:Thing .
+
+schema:Thing a rdfs:Class ;
+    rdfs:label "Thing" ;
+    rdfs:comment "The most generic type of item." .
+
+schema:AchieveAction rdfs:subClassOf schema:Action .
+
+schema:AssessAction rdfs:subClassOf schema:Action .
+
+schema:ConsumeAction rdfs:subClassOf schema:Action .
+
+schema:ControlAction rdfs:subClassOf schema:Action .
+
+schema:CreateAction rdfs:subClassOf schema:Action .
+
+schema:FindAction rdfs:subClassOf schema:Action .
+
+schema:InteractAction rdfs:subClassOf schema:Action .
+
+schema:MoveAction rdfs:subClassOf schema:Action .
+
+schema:OrganizeAction rdfs:subClassOf schema:Action .
+
+schema:PlayAction rdfs:subClassOf schema:Action .
+
+schema:SearchAction rdfs:subClassOf schema:Action .
+
+schema:TradeAction rdfs:subClassOf schema:Action .
+
+schema:TransferAction rdfs:subClassOf schema:Action .
+
+schema:UpdateAction rdfs:subClassOf schema:Action .
+
+schema:actionStatus a rdf:Property ;
+    rdfs:label "actionStatus" ;
+    schema:domainIncludes schema:Action ;
+    schema:rangeIncludes schema:ActionStatusType ;
+    rdfs:comment "Indicates the current disposition of the Action." .
+
+schema:additionalType a rdf:Property ;
+    rdfs:label "additionalType" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:URL ;
+    rdfs:comment "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally." ;
+    rdfs:subPropertyOf rdf:type .
+
+schema:agent a rdf:Property ;
+    rdfs:label "agent" ;
+    schema:domainIncludes schema:Action ;
+    schema:rangeIncludes schema:Organization,
+        schema:Person ;
+    rdfs:comment "The direct performer or driver of the action (animate or inanimate). e.g. <em>John</em> wrote a book." .
+
+schema:alternateName a rdf:Property ;
+    rdfs:label "alternateName" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "An alias for the item." .
+
+schema:disambiguatingDescription a rdf:Property ;
+    rdfs:label "disambiguatingDescription" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation." ;
+    rdfs:subPropertyOf schema:description .
+
+schema:endTime a rdf:Property ;
+    rdfs:label "endTime" ;
+    schema:domainIncludes schema:Action,
+        schema:FoodEstablishmentReservation ;
+    schema:rangeIncludes schema:DateTime ;
+    rdfs:comment """The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>.</p>
+
+<p>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.""" .
+
+schema:error a rdf:Property ;
+    rdfs:label "error" ;
+    schema:domainIncludes schema:Action ;
+    schema:rangeIncludes schema:Thing ;
+    rdfs:comment "For failed actions, more information on the cause of the failure." .
+
+schema:identifier a rdf:Property ;
+    rdfs:label "identifier" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:PropertyValue,
+        schema:Text,
+        schema:URL ;
+    rdfs:comment "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details." ;
+    owl:equivalentProperty dct:identifier .
+
+schema:image a rdf:Property ;
+    rdfs:label "image" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:ImageObject,
+        schema:URL ;
+    rdfs:comment "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>." .
+
+schema:instrument a rdf:Property ;
+    rdfs:label "instrument" ;
+    schema:domainIncludes schema:Action ;
+    schema:rangeIncludes schema:Thing ;
+    rdfs:comment "The object that helped the agent perform the action. e.g. John wrote a book with <em>a pen</em>." .
+
+schema:interactionType schema:rangeIncludes schema:Action .
+
+schema:location a rdf:Property ;
+    rdfs:label "location" ;
+    schema:domainIncludes schema:Action,
+        schema:Event,
+        schema:Organization ;
+    schema:rangeIncludes schema:Place,
+        schema:PostalAddress,
+        schema:Text ;
+    rdfs:comment "The location of for example where the event is happening, an organization is located, or where an action takes place." .
+
+schema:mainEntityOfPage a rdf:Property ;
+    rdfs:label "mainEntityOfPage" ;
+    schema:domainIncludes schema:Thing ;
+    schema:inverseOf schema:mainEntity ;
+    schema:rangeIncludes schema:CreativeWork,
+        schema:URL ;
+    rdfs:comment "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details." .
+
+schema:name a rdf:Property ;
+    rdfs:label "name" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "The name of the item." .
+
+schema:object a rdf:Property ;
+    rdfs:label "object" ;
+    schema:domainIncludes schema:Action ;
+    schema:rangeIncludes schema:Thing ;
+    rdfs:comment "The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read <em>a book</em>." .
+
+schema:participant a rdf:Property ;
+    rdfs:label "participant" ;
+    schema:domainIncludes schema:Action ;
+    schema:rangeIncludes schema:Organization,
+        schema:Person ;
+    rdfs:comment "Other co-agents that participated in the action indirectly. e.g. John wrote a book with <em>Steve</em>." .
+
+schema:potentialAction a rdf:Property ;
+    rdfs:label "potentialAction" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Action ;
+    rdfs:comment "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role." .
+
+schema:result a rdf:Property ;
+    rdfs:label "result" ;
+    schema:domainIncludes schema:Action ;
+    schema:rangeIncludes schema:Thing ;
+    rdfs:comment "The result produced in the action. e.g. John wrote <em>a book</em>." .
+
+schema:sameAs a rdf:Property ;
+    rdfs:label "sameAs" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:URL ;
+    rdfs:comment "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." .
+
+schema:startTime a rdf:Property ;
+    rdfs:label "startTime" ;
+    schema:domainIncludes schema:Action,
+        schema:FoodEstablishmentReservation ;
+    schema:rangeIncludes schema:DateTime ;
+    rdfs:comment """The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December.</p>
+
+<p>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.""" .
+
+schema:target a rdf:Property ;
+    rdfs:label "target" ;
+    schema:domainIncludes schema:Action ;
+    schema:rangeIncludes schema:EntryPoint ;
+    rdfs:comment "Indicates a target EntryPoint for an Action." .
+
+schema:url a rdf:Property ;
+    rdfs:label "url" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:URL ;
+    rdfs:comment "URL of the item." .
+
+schema:description a rdf:Property ;
+    rdfs:label "description" ;
+    schema:domainIncludes schema:Thing ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "A description of the item." ;
+    owl:equivalentProperty dct:description .
+

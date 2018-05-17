@@ -1,6 +1,7 @@
 # Real Estate Integration Schema
 
-Standard data model for integrating software and services in the real estate industry based on schema.org, RESO, linked-data-platform...
+An open, community sourced data model for integrating software in the real estate context.
+based on schema.org, RESO, linked-data-platform...
 
 ## About the Project
 

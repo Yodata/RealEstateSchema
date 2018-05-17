@@ -1,0 +1,40 @@
+id: https://yodata.io/app/smarter-agent
+type: SoftwareApplication
+produces: AskAction
+exampleData:
+- id: https://hsf.ds.bhhsresource.com/inbox/97604611010b4370b5f2a48317da1b31
+  type: Notification
+  instrument: https://yodata.io/app/smarter-agent
+  target: https://hsf.ds.bhhsresource.com/inbox/
+  timestamp: 1525384017574
+  object:
+    '@type': AskAction
+    identifier:
+      actionID: 4854329877991108745
+    description: A new mobile app user has been created
+    sameAs: https://api.smarteragent.com/1.0/prospects/48543298779911087xx
+    agent:
+      '@type': Person
+      identifier:
+        userID: 4854329878128467310
+        SAAppCode: BHHSCPANEK
+      givenName: Samantha
+      familyName: Seller
+      telephone: 5558675309
+      email: sam@example.com
+    instrument: BHHS Mobile APP
+    startTime: 2018-05-03T21:46:56Z
+    recipient:
+      '@id': https://10838xx.ds.bhhsresource.com/profile/card#me
+      '@type': RealEstateAgent
+      name: Andy Agent
+      sameAs: https://api.smarteragent.com/1.0/agent/11413100321000710148
+      telephone: 8644049544
+      email: andy@example.com
+      addressLocality: Anytown
+      addressRegion: CA
+      streetAddress: 123 Main Street
+      postalCode: 12345
+      identifier:
+        thirdPartyID: 1083871
+        SAAppCode: BHHSCPANES
