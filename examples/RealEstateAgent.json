@@ -1,0 +1,49 @@
+{
+    "type": "RealEstateAgent",
+    "id": "https://372308.ds.bhhsresource.com/profile/card#me",
+    "name": "Bruce Wayne",
+    "jobTitle": "Regional Manager",
+    "givenName": "Bruce",
+    "familyName": "Wayne",
+    "email": "bruce.wayne@acme.earth",
+    "faxNumber": "(860) 571-7410",
+    "telephone": [
+        "(860) 571-7000",
+        "(203) 940-4969"
+    ],
+    "certification": [
+        {
+            "type": "Certification",
+            "name": "eCertified®",
+            "startDate": "2001-09-04T19:00:00.000Z"
+        }
+    ],
+    "memberOf": [
+        {
+            "type": "OrganizationRole",
+            "roleName": "Customer Account Manager",
+            "memberOf": "https://ct301.ds.bhhsresource.com/profile/card#me",
+            "member": "https://372308.ds.bhhsresource.com/profile/card#me"
+        }
+    ],
+    "dreLicense": [
+        {
+            "type": "DRELicense",
+            "identifier": "REB 0424886",
+            "issuedBy": {
+                "type": "State",
+                "name": "CT",
+                "identifier": "CT"
+            }
+        }
+    ],
+    "workLocation": {
+        "type": "Organization",
+        "id": "https://ct301-001.ds.bhhsresource.com/profile/card#me",
+        "name": "New England Properties"
+    },
+    "_unstable": {
+        "UserType": "Non-Agent",
+        "Status": "Active"
+    }
+}

@@ -3,6 +3,9 @@
 An open source, vendor agnostic data model for integrating software in the real estate domain,
 based on schema.org, RESO, linked-data-platform...
 
+## Table of Contents
+
+
 ## About the Project
 
 The main goal of this project is accelerating innovation in the real estate industry with collaboration and open source.

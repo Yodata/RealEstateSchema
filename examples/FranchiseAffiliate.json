@@ -1,0 +1,71 @@
+{
+    "id": "https://ca330.ds.bhhsresource.com/profile/card#me",
+    "name": "California Properties",
+    "telephone": [
+        "(661) 702-0188",
+        "(661) 702-0188"
+    ],
+    "email": "AlexWoltman@BHHSCalProperty.com",
+    "sameAs": "http://www.bhhscalproperty.com",
+    "numberOfRealEstateAgents": 55,
+    "numberOfEmployees": 5,
+    "numberOfSuborganizations": 1,
+    "address": {
+        "type": "PostalAddress",
+        "streetAddress": "25060 Avenue Stanford Ste. 150",
+        "addressLocality": "Valencia",
+        "addressRegion": "CA",
+        "postalCode": "91355",
+        "addressCountry": "USA"
+    },
+    "owner": {
+        "type": "Person",
+        "givenName": "Jeff",
+        "familyName": "Bugbee",
+        "telephone": "(661) 433-4770",
+        "email": "Jeff@JeffBugbee.com"
+    },
+    "parentOrganization": {
+        "_franchseType": "K",
+        "_affiliateStatus": "Active",
+        "type": "OrganizationRole",
+        "roleName": "Franchisee",
+        "parentOrganization": "https://www.berkshirehathawayhs.com",
+        "subOrganization": "https://ca330.ds.bhhsresource.com/profile/card#me"
+    },
+    "memberOf": [
+        {
+            "type": "OrganizationRole",
+            "roleName": "Small Business Enterprise (SBE Certified)",
+            "memberOf": "https://www.berkshirehathawayhs.com",
+            "member": "https://ca330.ds.bhhsresource.com/profile/card#me"
+        },
+        {
+            "type": "OrganizationRole",
+            "roleName": "Certified International Property Specialist (CIPS) Agents",
+            "memberOf": "https://www.berkshirehathawayhs.com",
+            "member": "https://ca330.ds.bhhsresource.com/profile/card#me"
+        },
+        {
+            "type": "OrganizationRole",
+            "roleName": "MLSMember",
+            "memberOf": "https://www.berkshirehathawayhs.com",
+            "member": "https://ca330.ds.bhhsresource.com/profile/card#me",
+            "identifier": 1229
+        },
+        {
+            "type": "OrganizationRole",
+            "roleName": "MLSMember",
+            "memberOf": "CA-C",
+            "member": "https://ca330.ds.bhhsresource.com/profile/card#me",
+            "identifier": "CA-C-CA330"
+        },
+        {
+            "type": "OrganizationRole",
+            "roleName": "MLSMember",
+            "memberOf": "CA-GAVAOR",
+            "member": "https://ca330.ds.bhhsresource.com/profile/card#me",
+            "identifier": "CA-GAVAOR-CA330"
+        }
+    ]
+}

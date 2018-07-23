@@ -1,0 +1,65 @@
+# Example RealEstateOrganization: includes offices, brokers, companies and franchisors 
+# that provide facilities and services to RealEstateAgents
+type: RealEstateOrganization
+id: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
+name: New England Properties
+telephone: (860) 521-8100
+faxNumber: (860) 521-7604
+numberOfRealEstateAgents: 100
+address:
+  type: PostalAddress
+  streetAddress: 970 Farmington Ave.
+  addressLocality: West Hartford
+  addressRegion: CT
+  postalCode: 3143
+  addressCountry: USA
+parentOrganization: # Franchisor
+  type: OrganizationRole
+  parentOrganization: 'https://ct301.ds.bhhsresource.com/profile/card#me'
+  subOrganization: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
+memberOf:
+  # MLS Memberships
+  - type: OrganizationRole
+    roleName: MLSMember
+    memberOf: 'https://ct301.ds.bhhsresource.com/profile/card#me'
+    member: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
+    identifier: 66
+  - type: OrganizationRole
+    roleName: MLSMember
+    memberOf: MA-MPINM
+    member: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
+    identifier: M80006
+  - type: OrganizationRole
+    roleName: MLSMember
+    memberOf: MA-MPINM
+    member: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
+    identifier: M95371
+  - type: OrganizationRole
+    roleName: MLSMember
+    memberOf: CT-S
+    member: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
+    identifier: BHHS04
+
+# Office Logos
+# todo: Add image binaries!
+image:
+  - type: ImageObject
+    about: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
+    idendifier: 1166
+    fileName: CT301_H_SBS_Seal.zip
+    encodingType: application/zip
+  - type: ImageObject
+    about: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
+    idendifier: 1167
+    fileName: CT301_H_Seal.zip
+    encodingType: application/zip
+  - type: ImageObject
+    about: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
+    idendifier: 1168
+    fileName: CT301_V_SBS_Seal.zip
+    encodingType: application/zip
+  - type: ImageObject
+    about: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
+    idendifier: 1169
+    fileName: CT301_V_Seal.zip
+    encodingType: application/zip
