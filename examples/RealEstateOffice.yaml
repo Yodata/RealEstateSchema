@@ -40,26 +40,49 @@ memberOf:
     member: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
     identifier: BHHS04
 
-# Office Logos
-# todo: Add image binaries!
+# Office Images
 image:
-  - type: ImageObject
-    about: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
-    idendifier: 1166
-    fileName: CT301_H_SBS_Seal.zip
+  - type: DigitalDocument
+    name: CT301_H_SBS_Seal.zip
     encodingType: application/zip
-  - type: ImageObject
-    about: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
-    idendifier: 1167
-    fileName: CT301_H_Seal.zip
+    url: >-
+      https://s3-us-west-2.amazonaws.com/hsf-public-ds-bhhsresource-com/CT301-002/image/CT301_H_SBS_Seal.zip
+    identifier:
+      LogoID: 1166
+    about:
+      type: RealEstateOffice
+      identifier:
+        OfficeID: CT301-002
+  - type: DigitalDocument
+    name: CT301_H_Seal.zip
     encodingType: application/zip
-  - type: ImageObject
-    about: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
-    idendifier: 1168
-    fileName: CT301_V_SBS_Seal.zip
+    url: >-
+      https://s3-us-west-2.amazonaws.com/hsf-public-ds-bhhsresource-com/CT301-002/image/CT301_H_Seal.zip
+    identifier:
+      LogoID: 1167
+    about:
+      type: RealEstateOffice
+      identifier:
+        OfficeID: CT301-002
+  - type: DigitalDocument
+    name: CT301_V_SBS_Seal.zip
     encodingType: application/zip
-  - type: ImageObject
-    about: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
-    idendifier: 1169
-    fileName: CT301_V_Seal.zip
+    url: >-
+      https://s3-us-west-2.amazonaws.com/hsf-public-ds-bhhsresource-com/CT301-002/image/CT301_V_SBS_Seal.zip
+    identifier:
+      LogoID: 1168
+    about:
+      type: RealEstateOffice
+      identifier:
+        OfficeID: CT301-002
+  - type: DigitalDocument
+    name: CT301_V_Seal.zip
     encodingType: application/zip
+    url: >-
+      https://s3-us-west-2.amazonaws.com/hsf-public-ds-bhhsresource-com/CT301-002/image/CT301_V_Seal.zip
+    identifier:
+      LogoID: 1169
+    about:
+      type: RealEstateOffice
+      identifier:
+        OfficeID: CT301-002
