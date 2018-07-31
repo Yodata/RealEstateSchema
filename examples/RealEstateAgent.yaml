@@ -4,6 +4,15 @@
 type: RealEstateAgent # type for employees = Person
 id: 'https://372308.ds.bhhsresource.com/profile/card#me'
 
+# additional identifiers (company specific)
+identifier:
+  HSFPersonMLSID: '105579'
+  HSFPREAID: '367750'
+
+# non-standard fields (not stable)
+_UserType: Full Time Sales Professional
+_Status: Active
+
 name: Bruce Wayne
 jobTitle: Regional Manager
 givenName: Bruce
@@ -20,25 +29,26 @@ certification:
     startDate: 2001-09-04T19:00:00.000Z
 
 memberOf:
+  # company specific role/group membership
   - type: OrganizationRole
     roleName: Customer Account Manager
     memberOf: 'https://ct301.ds.bhhsresource.com/profile/card#me'
     member: 'https://372308.ds.bhhsresource.com/profile/card#me'
 
-dreLicense:
-  - type: DRELicense
-    identifier: REB 0424886
+# dre licencse moved to permit (per schema.org)
+permit:
+  - type: RealEstateLicense
+    name: 'CT DRE #RES 0764626'
+    identifier: RES 0764626
     issuedBy:
       type: State
       name: CT
       identifier: CT
+    issuedThrough:
+      type: GovernmentService
+      name: CT Department of Real Estate
 
 workLocation:
-  type: Organization
+  type: RealEstateOffice
   id: 'https://ct301-001.ds.bhhsresource.com/profile/card#me'
   name: New England Properties
-
-_unstable:
-  UserType: Non-Agent
-  Status: Active
-
