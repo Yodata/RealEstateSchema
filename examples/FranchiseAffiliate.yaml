@@ -1,63 +1,51 @@
 # Example of a real estate franchisee organization
 # note: properties prefixed with an underscore are unstable and may be changed in the future.
-id: 'https://ca330.ds.bhhsresource.com/profile/card#me'
+type: Organization
+id: 'https://ca301.ds.bhhsresource.com/profile/card#me'
 name: California Properties
+sameAs: 'http://www.bhhscal.com'
+url: 'http://www.bhhscal.com'
+identifier:
+  HSFAffiliateID: CA301
 telephone:
-  - (661) 702-0188
-  - (661) 702-0188
-email: AlexWoltman@BHHSCalProperty.com
-sameAs: 'http://www.bhhscalproperty.com'
-numberOfRealEstateAgents: 55
-numberOfEmployees: 5
-numberOfSuborganizations: 1
-
+  - (888) 995-7575
+  - (858) 792-6085
+faxNumber: (858) 792-0921
+email: eleads@bhhscal.com
+numberOfRealEstateAgents: 2542
+numberOfEmployees: 203
+numberOfSuborganizations: 52
 address:
   type: PostalAddress
-  streetAddress: 25060 Avenue Stanford Ste. 150
-  addressLocality: Valencia
+  streetAddress: 12770 El Camino Real Ste. 100
+  addressLocality: San Diego
   addressRegion: CA
-  postalCode: '91355'
+  postalCode: '92130'
   addressCountry: USA
-
 owner:
   type: Person
-  givenName: Jeff
-  familyName: Bugbee
-  telephone: (661) 433-4770
-  email: Jeff@JeffBugbee.com
-
-# Franchisor / franchisee relationship role 
+  givenName: Dean
+  familyName: Stalter
+  telephone: (858) 792-6085
+  faxNumber: (858) 792-0921
+  email: dstalter@bhhscal.com
 parentOrganization:
   _franchseType: K
   _affiliateStatus: Active
   type: OrganizationRole
   roleName: Franchisee
   parentOrganization: 'https://www.berkshirehathawayhs.com'
-  subOrganization: 'https://ca330.ds.bhhsresource.com/profile/card#me'
-
+  subOrganization: 'https://ca301.ds.bhhsresource.com/profile/card#me'
 memberOf:
-
+  # Company specific group/role memberships
   - type: OrganizationRole
-    roleName: Small Business Enterprise (SBE Certified)
+    roleName: Luxury Market
     memberOf: 'https://www.berkshirehathawayhs.com'
-    member: 'https://ca330.ds.bhhsresource.com/profile/card#me'
-  - type: OrganizationRole
-    roleName: Certified International Property Specialist (CIPS) Agents
-    memberOf: 'https://www.berkshirehathawayhs.com'
-    member: 'https://ca330.ds.bhhsresource.com/profile/card#me'
-
+    member: 'https://ca301.ds.bhhsresource.com/profile/card#me'
+    startDate: 2017-05-10T12:09:53.823Z
+  # MLS Membership
   - type: OrganizationRole
     roleName: MLSMember
-    memberOf: 'https://www.berkshirehathawayhs.com'
-    member: 'https://ca330.ds.bhhsresource.com/profile/card#me'
-    identifier: 1229
-  - type: OrganizationRole
-    roleName: MLSMember
-    memberOf: CA-C
-    member: 'https://ca330.ds.bhhsresource.com/profile/card#me'
-    identifier: CA-C-CA330
-  - type: OrganizationRole
-    roleName: MLSMember
-    memberOf: CA-GAVAOR
-    member: 'https://ca330.ds.bhhsresource.com/profile/card#me'
-    identifier: CA-GAVAOR-CA330
+    memberOf: CA-CRMLS
+    member: 'https://ca301.ds.bhhsresource.com/profile/card#me'
+    memberId: CAMRMLS-CA301

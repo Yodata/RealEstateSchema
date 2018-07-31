@@ -1,6 +1,6 @@
 # Example RealEstateOrganization: includes offices, brokers, companies and franchisors 
 # that provide facilities and services to RealEstateAgents
-type: RealEstateOrganization
+type: RealEstateOffice
 id: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
 name: New England Properties
 telephone: (860) 521-8100
@@ -11,78 +11,37 @@ address:
   streetAddress: 970 Farmington Ave.
   addressLocality: West Hartford
   addressRegion: CT
-  postalCode: 3143
+  postalCode: '92067'
   addressCountry: USA
-parentOrganization: # Franchisor
+parentOrganization: 
+  # Franchisor
   type: OrganizationRole
   parentOrganization: 'https://ct301.ds.bhhsresource.com/profile/card#me'
   subOrganization: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
 memberOf:
-  # MLS Memberships
+  # MLS Membership
   - type: OrganizationRole
     roleName: MLSMember
     memberOf: 'https://ct301.ds.bhhsresource.com/profile/card#me'
     member: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
-    identifier: 66
+    memberId: '66'
   - type: OrganizationRole
-    roleName: MLSMember
-    memberOf: MA-MPINM
-    member: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
-    identifier: M80006
-  - type: OrganizationRole
-    roleName: MLSMember
-    memberOf: MA-MPINM
-    member: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
-    identifier: M95371
-  - type: OrganizationRole
-    roleName: MLSMember
-    memberOf: CT-S
-    member: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
-    identifier: BHHS04
+    name: MLSMember
+    member: 'https://ca301-002.ds.bhhsresource.com/profile/card#me'
+    memberOf: CA-S
+    memberId: '3824'
 
 # Office Images
-image:
+logo:
   - type: DigitalDocument
-    name: CT301_H_SBS_Seal.zip
+    name: CA301_H_SBS_Seal.zip
     encodingType: application/zip
     url: >-
-      https://s3-us-west-2.amazonaws.com/hsf-public-ds-bhhsresource-com/CT301-002/image/CT301_H_SBS_Seal.zip
+      https://s3-us-west-2.amazonaws.com/hsf-public-ds-bhhsresource-com/CA301-002/logo/CA301_H_SBS_Seal.zip
     identifier:
-      LogoID: 1166
+      LogoID: 1126
     about:
       type: RealEstateOffice
+      id: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
       identifier:
-        OfficeID: CT301-002
-  - type: DigitalDocument
-    name: CT301_H_Seal.zip
-    encodingType: application/zip
-    url: >-
-      https://s3-us-west-2.amazonaws.com/hsf-public-ds-bhhsresource-com/CT301-002/image/CT301_H_Seal.zip
-    identifier:
-      LogoID: 1167
-    about:
-      type: RealEstateOffice
-      identifier:
-        OfficeID: CT301-002
-  - type: DigitalDocument
-    name: CT301_V_SBS_Seal.zip
-    encodingType: application/zip
-    url: >-
-      https://s3-us-west-2.amazonaws.com/hsf-public-ds-bhhsresource-com/CT301-002/image/CT301_V_SBS_Seal.zip
-    identifier:
-      LogoID: 1168
-    about:
-      type: RealEstateOffice
-      identifier:
-        OfficeID: CT301-002
-  - type: DigitalDocument
-    name: CT301_V_Seal.zip
-    encodingType: application/zip
-    url: >-
-      https://s3-us-west-2.amazonaws.com/hsf-public-ds-bhhsresource-com/CT301-002/image/CT301_V_Seal.zip
-    identifier:
-      LogoID: 1169
-    about:
-      type: RealEstateOffice
-      identifier:
-        OfficeID: CT301-002
+        HSFOfficeID: CA301-002
