@@ -1,11 +1,14 @@
-# Example RealEstateOrganization: includes offices, brokers, companies and franchisors 
-# that provide facilities and services to RealEstateAgents
+# @class RealEstateOffice a Place > LocalBusiness providing RealEstateServices
+# @subClassOf Place, LocalBusiness
 type: RealEstateOffice
 id: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
-name: New England Properties
-telephone: (860) 521-8100
-faxNumber: (860) 521-7604
+
+name: Gotham City Properties
+telephone: (719) 26 OATES
+faxNumber: (800) 273 8255
+
 numberOfRealEstateAgents: 100
+
 address:
   type: PostalAddress
   streetAddress: 970 Farmington Ave.
@@ -13,35 +16,32 @@ address:
   addressRegion: CT
   postalCode: '92067'
   addressCountry: USA
+
+# @property parentOrganization {OrganizationRole} describes the relationship between Franchisor and Affiliates (Franchisee)
 parentOrganization: 
-  # Franchisor
-  type: OrganizationRole
-  parentOrganization: 'https://ct301.ds.bhhsresource.com/profile/card#me'
-  subOrganization: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
+  - type: OrganizationRole
+    parentOrganization: 'https://ct301.ds.bhhsresource.com/profile/card#me'
+    # @enum RoleStatus {string} [Active,Inactive,Pending]
+    roleStatus: Active
+
+# @property memberOf {OrganizationRole} describes relationships with Organizations, including MLSs, groups and other Organizations
 memberOf:
-  # MLS Membership
+
+# @example OrganizationRole - an MLS Membership
   - type: OrganizationRole
     roleName: MLSMember
-    memberOf: 'https://ct301.ds.bhhsresource.com/profile/card#me'
-    member: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
-    memberId: '66'
-  - type: OrganizationRole
-    name: MLSMember
-    member: 'https://ca301-002.ds.bhhsresource.com/profile/card#me'
-    memberOf: CA-S
-    memberId: '3824'
+    memberOf:
+      type: MultipleListingService
+      name: 'EarthMLS'
+    memberId: 'GOTHAM-001'
 
-# Office Images
+# @property logo {DigitalDocument | URL} - office logos and other brand images - office photos use #image property
 logo:
   - type: DigitalDocument
-    name: CA301_H_SBS_Seal.zip
+    name: logo.zip
     encodingType: application/zip
-    url: >-
-      https://s3-us-west-2.amazonaws.com/hsf-public-ds-bhhsresource-com/CA301-002/logo/CA301_H_SBS_Seal.zip
-    identifier:
-      LogoID: 1126
+    url: https://example.com/public/image/logo.zip
     about:
       type: RealEstateOffice
-      id: 'https://ct301-002.ds.bhhsresource.com/profile/card#me'
-      identifier:
-        HSFOfficeID: CA301-002
+      id: 'https://example.com/profile/card#me'
+      
