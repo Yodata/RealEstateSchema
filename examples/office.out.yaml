@@ -1,0 +1,95 @@
+type: RealEstateOffice
+id: 'https://officeid.ds.bhhsresource.com/profile/card#me'
+
+identifier:
+  OfficeGUID: officed6-d591-e811-9efd-0a3d083f1533OfficeGUID
+  OfficeID: OfficeID
+  OfficeId: OfficeId
+  OfficeMLSID: OfficeMLSID
+
+name: OfficeDBA
+url: Website
+email:
+- ConsumerEmail
+- OfficePublicEmail
+faxNumber: Fax
+telephone:
+- BusinessPhone
+- ConsumerPhone
+- OfficePublicPhone
+- Phone
+- Tollfree
+
+address:
+  type: PostalAddress
+  addressCountry: Country
+  addressLocality: City
+  addressRegion: State
+  postalCode: ZipCode
+  streetAddress:
+  - Address1
+  - Address2
+
+contactPoint:
+- type: ContactPoint
+  name: REO
+  email: REOEmail
+
+- type: ContactPoint
+  name: Referral
+  email: ReferralEmail
+
+- type: ContactPoint
+  name: Relocation
+  email: RelocationEmail
+  faxNumber: RelocationFax
+  telephone:
+  - RelocationPhone
+  - RelocationTollFree
+  url: RelocationWebsite
+
+additionalProperty:
+  BrokerID: BrokerID
+  OfficeType: OfficeType
+  OfficeStatus: OfficeStatus
+  isActive: IsActive
+  Continent: Continent
+  FullTimeAgents: 1
+  PartTimeAgents: 1
+  PrimaryContact: PrimaryContact
+  OfficeEffectiveDate: OfficeEffectiveDate
+  REOEmailCheck: REOEmailCheck
+  ReferralEmailCheck: ReferralEmailCheck
+  RelocationEmailCheck: RelocationEmailCheck
+  Specialty: Specialty
+  TimeIn: '1970-01-01T00:00:00.000'
+  TimeUpdated: '1970-01-01T00:00:00.000'
+  RelocationOffice: RelocationOffice
+
+memberOf:
+-
+  type: OrganizationRole
+  roleName: MLSMember
+  memberId: OfficeMLSID1
+  memberOf:
+    type: MultipleListingService
+    name: OfficeMLSName1
+  member: 'https://officeid.ds.bhhsresource.com/profile/card#me'
+-
+  type: OrganizationRole
+  roleName: MLSMember
+  memberId: OfficeMLSID15
+  memberOf:
+    type: MultipleListingService
+    name: OfficeMLSName15
+  member: 'https://officeid.ds.bhhsresource.com/profile/card#me'
+-
+  type: OrganizationRole
+  roleName: DesignationType
+  startDate: '2018-02-19T13:24:18.557'
+
+parentOrganization:
+  type: Organization
+  identifier:
+    AffiliateGUID: affiliat-e591-e811-9efd-0a3d083f1533
+    AffiliateID: AffiliateID

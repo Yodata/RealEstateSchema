@@ -1,0 +1,172 @@
+# HSF WEB-SERVICES Contact -> Person/RealEstateAgent
+'@keyorder':
+  value:
+  - type
+  - id
+  - identifier
+  - name
+  - givenName
+  - familyName
+  - jobTitle
+  - email
+  - telephone
+  - faxNumber
+FullName:
+  key: name
+EmployeeTitle:
+  key: jobTitle
+Email:
+  key: email
+BusinessPhone:
+  key: telephone
+MobilePhone:
+  key: telephone
+Fax:
+  key: faxNumber
+FirstName:
+  key: givenName
+LastName:
+  key: familyName
+ContactLanguageList:
+  key: availableLanguage
+LanguageName:
+  key: name
+UserType:
+  key: additionalProperty.UserType
+PersonMLSID:
+  key: identifier.PersonMLSID
+BrokerID:
+  key: additionalProperty.BrokerID
+PersonPREAID:
+  key: identifier.PersonPREAID
+ContactID:
+  key: identifier.ContactID
+ContactGUID:
+  key: identifier.ContactGUID
+AffiliateID:
+  key: additionalProperty.AffiliateID
+OfficeID:
+  key: additionalProperty.OfficeID
+Status:
+  key: additionalProperty.Status
+ExpirationDate:
+  key: validUntil
+OfficeStatus:
+  key: additionalProperty.OfficeStatus
+OfficeDBA:
+  key: additionalProperty.OfficeDBA
+GrantedOnDate:
+  key: validFrom
+GrantingAuthority:
+  key: issuedBy
+CertificationList:
+  key: certification
+  val: !!js/function |
+    props => ({
+      type: 'Certification',
+      name: props.value['CertificationName'],
+      validFrom: props.value['OriginalCertificationDate'],
+      additionalProperty: {
+        CertificationTypeID: props.value['CertificationTypeID'],
+        MostRecentCertificationDate: props.value['MostRecentCertificationDate']
+      }
+    })
+RelationshipRoleList:
+  key: 'memberOf'
+  val: !!js/function |
+    props => {
+      let value = props.value
+      if (value && value.RelationshipRoleList) { return value.RelationshipRoleList }
+      else if (value)
+        return {
+          type: 'OrganizationRole',
+          roleName: value['RoleName'],
+          memberOf: `https://${value['AccountID']}.ds.bhhsresource.com/profile/card#me` }
+      else
+        return value
+    }
+
+
+
+  #NetworkingGroupList:
+
+PersonDRELicenseState1: &permit
+  key: permit
+  val: !!js/function |
+    props => {
+      let {key, value, last} = props
+      let index = key.replace('PersonDRELicenseState', '')
+      let state = value
+      let id = last['PersonDRELicenseNbr' + index]
+      return {
+        type:          'RealEstateLicense',
+        name:          `${state} DRE #${id}`,
+        identifier:    id,
+        issuedBy:      {
+          type:       'State',
+          name:       state,
+          identifier: state
+        },
+        issuedThrough: {
+          type: 'GovernmentService',
+          name: `${state} Department of Real Estate`,
+        },
+      }
+    }
+PersonDRELicenseState2: *permit
+PersonDRELicenseState3: *permit
+PersonDRELicenseState4: *permit
+PersonDRELicenseState5: *permit
+PersonDRELicenseState6: *permit
+PersonDRELicenseState7: *permit
+PersonDRELicenseNbr1: !!null
+PersonDRELicenseNbr2: !!null
+PersonDRELicenseNbr3: !!null
+PersonDRELicenseNbr4: !!null
+PersonDRELicenseNbr5: !!null
+personDRELicenseNbr6: !!null
+PersonDRELicenseNbr7: !!null
+
+# MLS Memberships
+PersonMLSName1: &mlsMembership
+  key: memberOf
+  val: !!js/function >
+    props => ({
+    type: 'OrganizationRole',
+    roleName: 'MLSMember',
+    memberOf: { type: 'MultipleListingService', name: props.value },
+    memberId: props.last[props.key.replace('MLSName','MLSID')],
+    member: `https://${props.last['ContactID'].toLowerCase()}.ds.bhhsresource.com/profile/card#me`
+    })
+
+PersonMLSName2: *mlsMembership
+PersonMLSName3: *mlsMembership
+PersonMLSName4: *mlsMembership
+PersonMLSName5: *mlsMembership
+PersonMLSName6: *mlsMembership
+PersonMLSName7: *mlsMembership
+PersonMLSName8: *mlsMembership
+PersonMLSName9: *mlsMembership
+PersonMLSName10: *mlsMembership
+PersonMLSName11: *mlsMembership
+PersonMLSName12: *mlsMembership
+PersonMLSName13: *mlsMembership
+PersonMLSName14: *mlsMembership
+PersonMLSName15: *mlsMembership
+PersonMLSID1: !!null
+PersonMLSID2: !!null
+PersonMLSID3: !!null
+PersonMLSID4: !!null
+PersonMLSID5: !!null
+PersonMLSID6: !!null
+PersonMLSID7: !!null
+PersonMLSID8: !!null
+PersonMLSID9: !!null
+PersonMLSID10: !!null
+PersonMLSID11: !!null
+PersonMLSID12: !!null
+PersonMLSID13: !!null
+PersonMLSID14: !!null
+PersonMLSID15: !!null
+
+NetworkingGroupList: !!null

@@ -1,0 +1,105 @@
+# transformation configuration
+'@initialValue':
+  type: Organization
+  address:
+    type: PostalAddress
+  owner:
+    type: Person
+  parentOrganization:
+    type: OrganizationRole
+    roleName: FranchiseAffiliate
+    parentOrganization: 'https://hsf.ds.bhhsresource.com/profile/card#me'
+'@keyorder':
+    value:
+    - type
+    - id
+    - name
+    - identifier
+    - email
+    - telephone
+    - faxNumber
+    - url
+AffiliateDBA:            name
+AffiliateFax:            faxNumber
+AffiliateBusinessPhone:  telephone
+AffiliateOtherPhone:     telephone
+AffiliatePrimaryWebSite: url
+AffiliatePublicEmail:    email
+AffiliatePublicPhone:    telephone
+NonAgentCount:           numberOfEmployees
+NumberOfActiveOffices:   numberOfSubOrganizations
+
+AffiliateID:             identifier.AffiliateID
+BrokerID:                identifier.BrokerID
+AffiliateMLSID:          identifier.AffiliateMLSID
+
+AffiliateCountry:        address.addressCountry
+AffiliateCity:           address.addressLocality
+AffiliateState:          address.addressRegion
+AffiliateStreetAddress1: address.streetAddress
+AffiliateStreetAddress2: address.streetAddress
+AffiliateZipCode:        address.postalCode
+
+BrokerOwnerEmail:        owner.email
+BrokerOwnerFax:          owner.faxNumber
+BrokerOwnerFirstName:    owner.givenName
+BrokerOwnerLastName:     owner.familyName
+BrokerOwnerPhone:        owner.telephone
+
+FullTimeReportedCount:   additionalProperty.FullTimeReportedCount
+FullTimeRosterCount:     additionalProperty.FullTimeRosterCount
+PartTimeReportedCount:   additionalProperty.PartTimeReportedCount
+PartTimeRosterCount:     additionalProperty.PartTimeRosterCount
+FranchiseType:           additionalProperty.FranchiseType
+AffiliateStatus:         additionalProperty.AffiliateStatus
+
+OriginalAffiliationDate: parentOrganization.startDate
+RenewalDate:             parentOrganization.renewalDate
+ExpirationDate:          parentOrganization.endDate
+
+MobileLeadNotificationEmail: additionalProperty.MobileLeadNotificationEmail
+MobileLeadNotificationPhone: additionalProperty.MobileLeadNotificationPhone
+MarketDesignationList: memberOf
+
+AffiliateMLSName1: &mlsMembership
+  key: memberOf
+  val: !!js/function >
+    props => ({
+    type: 'OrganizationRole',
+    roleName: 'MLSMember',
+    memberOf: { type: 'MultipleListingService', name: props.value },
+    memberId: props.last[props.key.replace('MLSName','MLSID')],
+    member: `https://${props.last['AffiliateID'].toLowerCase()}.ds.bhhsresource.com/profile/card#me`
+    })
+AffiliateMLSName2:  *mlsMembership
+AffiliateMLSName3:  *mlsMembership
+AffiliateMLSName4:  *mlsMembership
+AffiliateMLSName5:  *mlsMembership
+AffiliateMLSName6:  *mlsMembership
+AffiliateMLSName7:  *mlsMembership
+AffiliateMLSName8:  *mlsMembership
+AffiliateMLSName9:  *mlsMembership
+AffiliateMLSName10: *mlsMembership
+AffiliateMLSName11: *mlsMembership
+AffiliateMLSName12: *mlsMembership
+AffiliateMLSName13: *mlsMembership
+AffiliateMLSName14: *mlsMembership
+AffiliateMLSName15: *mlsMembership
+
+
+# hidden keys
+AffiliateMLSID1:  !!null
+AffiliateMLSID2:  !!null
+AffiliateMLSID3:  !!null
+AffiliateMLSID4:  !!null
+AffiliateMLSID5:  !!null
+AffiliateMLSID6:  !!null
+AffiliateMLSID7:  !!null
+AffiliateMLSID8:  !!null
+AffiliateMLSID9:  !!null
+AffiliateMLSID10: !!null
+AffiliateMLSID11: !!null
+AffiliateMLSID12: !!null
+AffiliateMLSID13: !!null
+AffiliateMLSID14: !!null
+AffiliateMLSID15: !!null

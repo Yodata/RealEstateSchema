@@ -1,0 +1,49 @@
+AffiliateID: AffiliateID
+BrokerID: BrokerID
+BusinessPhone: BusinessPhone
+EmployeeTitle: EmployeeTitle
+Fax: Fax
+FirstName: FirstName
+FullName: FullName
+LastName: LastName
+ContactID: ContactID
+ContactGUID: contact6-d591-e811-9efd-0a3d083f1533
+Email: Email
+OfficeDBA: OfficeDBA
+OfficeID: OfficeID
+OfficeStatus: OfficeStatus
+PersonDRELicenseNbr1: PersonDRELicenseNbr1
+PersonDRELicenseNbr7: PersonDRELicenseNbr7
+PersonDRELicenseState1: PersonDRELicenseState1
+PersonDRELicenseState7: PersonDRELicenseState7
+PersonMLSID1: PersonMLSID1
+PersonMLSID15: PersonMLSID15
+PersonMLSName1: PersonMLSName1
+PersonMLSName15: PersonMLSName15
+PersonPREAID: PersonPREAID
+Status: Status
+UserType: Full Time Sales Professional
+CertificationList:
+- AffiliateID: AffiliateID
+  CertificationName: CetificationName
+  CertificationTypeID: CertificationTypeID
+  ContactID: ContactID
+  FirstName: FirstName
+  LastName: LastName
+  MostRecentCertificationDate: '1970-01-01T00:00:00.000Z'
+  Name: Name
+  OfficeID: OfficeID
+  OriginalCertificationDate: '1970-01-01T00:00:00.000Z'
+ContactLanguageList:
+- ExpirationDate: '1970-01-01T00:00:00Z'
+  GrantedOnDate: '1970-01-01T00:00:00Z'
+  GrantingAuthority: GrantingAuthority
+  LanguageName: LanguageName
+NetworkingGroupList:
+  NetworkingGroupList:
+  - Name: Multicultural
+RelationshipRoleList:
+- AccountID: AccountID
+  AccountType: AccountType
+  RoleName: RoleName
+

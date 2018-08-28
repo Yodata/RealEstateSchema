@@ -1,0 +1,93 @@
+'@initialValue':
+  type: RealEstateOffice
+  address:
+    type: PostalAddress
+  parentOrganization:
+    type: Organization
+
+OfficeID                : identifier.OfficeID
+OfficeGUID              : identifier.OfficeGUID
+OfficeId                : identifier.OfficeId
+OfficeMLSID             : identifier.OfficeMLSID
+OfficeDBA               : name
+ConsumerEmail           : email
+OfficePublicEmail       : email
+Phone                   : telephone
+BusinessPhone           : telephone
+ConsumerPhone           : telephone
+OfficePublicPhone       : telephone
+Tollfree                : telephone
+Fax                     : faxNumber
+Website                 : url
+OfficeStatus            : additionalProperty.OfficeStatus
+FullTimeAgents          : additionalProperty.FullTimeAgents
+PartTimeAgents          : additionalProperty.PartTimeAgents
+OfficeType              : additionalProperty.OfficeType
+Address1                : address.streetAddress
+Address2                : address.streetAddress
+City                    : address.addressLocality
+State                   : address.addressRegion
+ZipCode                 : address.postalCode
+Country                 : address.addressCountry
+AffiliateGUID           : parentOrganization.identifier.AffiliateGUID
+AffiliateID             : parentOrganization.identifier.AffiliateID
+REOEmail                : contactPoint.REO.email
+ReferralEmail           : contactPoint.Referral.email
+RelocationEmail         : contactPoint.Relocation.email
+RelocationFax           : contactPoint.Relocation.faxNumber
+RelocationPhone         : contactPoint.Relocation.telephone
+RelocationTollFree      : contactPoint.Relocation.telephone
+RelocationWebsite       : contactPoint.Relocation.url
+Continent               : additionalProperty.Continent
+IsActive                : additionalProperty.isActive
+OfficeEffectiveDate     : additionalProperty.OfficeEffectiveDate
+PrimaryContact          : additionalProperty.PrimaryContact
+REOEmailCheck           : additionalProperty.REOEmailCheck
+ReferralEmailCheck      : additionalProperty.ReferralEmailCheck
+RelocationEmailCheck    : additionalProperty.RelocationEmailCheck
+RelocationOffice        : additionalProperty.RelocationOffice
+Specialty               : additionalProperty.Specialty
+TimeIn                  : additionalProperty.TimeIn
+TimeUpdated             : additionalProperty.TimeUpdated
+OfficeMarketDesignation : null
+BrokerID                : additionalProperty.BrokerID
+OfficeMLSName1: &mlsMembership
+  key: memberOf
+  val: !!js/function >
+    props => ({
+    type: 'OrganizationRole',
+    roleName: 'MLSMember',
+    memberOf: { type: 'MultipleListingService', name: props.value },
+    memberId: props.last[props.key.replace('MLSName','MLSID')],
+    member: `https://${props.last['OfficeID'].toLowerCase()}.ds.bhhsresource.com/profile/card#me`
+    })
+OfficeMLSName2:  *mlsMembership
+OfficeMLSName3:  *mlsMembership
+OfficeMLSName4:  *mlsMembership
+OfficeMLSName5:  *mlsMembership
+OfficeMLSName6:  *mlsMembership
+OfficeMLSName7:  *mlsMembership
+OfficeMLSName8:  *mlsMembership
+OfficeMLSName9:  *mlsMembership
+OfficeMLSName10: *mlsMembership
+OfficeMLSName11: *mlsMembership
+OfficeMLSName12: *mlsMembership
+OfficeMLSName13: *mlsMembership
+OfficeMLSName14: *mlsMembership
+OfficeMLSName15: *mlsMembership
+OfficeMLSID1:  null
+OfficeMLSID2:  null
+OfficeMLSID3:  null
+OfficeMLSID4:  null
+OfficeMLSID5:  null
+OfficeMLSID6:  null
+OfficeMLSID7:  null
+OfficeMLSID8:  null
+OfficeMLSID9:  null
+OfficeMLSID10: null
+OfficeMLSID11: null
+OfficeMLSID12: null
+OfficeMLSID13: null
+OfficeMLSID14: null
+OfficeMLSID15: null
+MarketDesignationList: memberOf

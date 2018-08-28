@@ -11,9 +11,9 @@ numberOfRealEstateAgents: 100
 
 address:
   type: PostalAddress
-  streetAddress: 970 Farmington Ave.
-  addressLocality: West Hartford
-  addressRegion: CT
+  streetAddress: 1007 Mountain Drive
+  addressLocality: Gotham City
+  addressRegion: NJ
   postalCode: '92067'
   addressCountry: USA
 

@@ -1,0 +1,44 @@
+AffiliateBusinessPhone: AffiliateBusinessPhone
+AffiliateCity: AffiliateCity
+AffiliateCountry: AffiliateCountry
+AffiliateDBA: AffiliateDBA
+AffiliateFax: AffiliateFax
+AffiliateID: AffiliateID
+AffiliateMLSID: AffiliateMLSID
+AffiliateMLSID1: AffiliateMLSID1
+AffiliateMLSID15: AffiliateMLSID15
+AffiliateMLSName1: AffiliateMLSName1
+AffiliateMLSName15: AffiliateMLSName15
+AffiliatePrimaryWebSite: AffiliatePrimaryWebSite
+AffiliatePublicEmail: AffiliatePublicEmail
+AffiliatePublicPhone: AffiliatePublicPhone
+AffiliateState: AffiliateState
+AffiliateStatus: AffiliateStatus
+AffiliateStreetAddress1: AffiliateStreetAddress1
+AffiliateStreetAddress2: AffiliateStreetAddress2
+AffiliateZipCode: AffiliateZipCode
+BrokerID: BrokerID
+BrokerOwnerEmail: BrokerOwnerEmail
+BrokerOwnerFax: BrokerOwnerFax
+BrokerOwnerFirstName: BrokerOwnerFirstName
+BrokerOwnerLastName: BrokerOwnerLastName
+BrokerOwnerPhone: BrokerOwnerPhone
+ExpirationDate: '1970-01-01T00:00:00Z'
+FranchiseType: FranchiseType
+FullTimeReportedCount: 1
+FullTimeRosterCount: 1
+MarketDesignationsList:
+  MarketDesignationList:
+  - DesignationType: DesignationType
+    ExpirationDate: '1970-01-01T00:00:00Z'
+    GrantedOnDate: '1970-01-01T00:00:00Z'
+    GrantingAuthority: GrantingAuthority
+NonAgentCount: 1
+NumberOfActiveOffices: 1
+OriginalAffiliationDate: '1970-01-01T00:00:00Z'
+PartTimeReportedCount: 1
+PartTimeRosterCount: 1
+RenewalDate: '1970-01-01T00:00:00Z'
+MobileLeadNotificationEmail: MobileLeadNotificationEmail
+MobileLeadNotificationPhone: MobileLeadNotificationPhone
+AffiliateOtherPhone: AffiliateOtherPhone

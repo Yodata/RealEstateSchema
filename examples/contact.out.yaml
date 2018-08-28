@@ -1,0 +1,81 @@
+type: RealEstateAgent
+id: 'https://contactid.ds.bhhsresource.com/profile/card#me'
+name: FullName
+givenName: FirstName
+familyName: LastName
+jobTitle: EmployeeTitle
+email: Email
+telephone: BusinessPhone
+faxNumber: Fax
+
+identifier:
+  ContactID: ContactID
+  ContactGUID: contact6-d591-e811-9efd-0a3d083f1533
+  PersonPREAID: PersonPREAID
+
+additionalProperty:
+  AffiliateID: AffiliateID
+  OfficeID: OfficeID
+  OfficeDBA: OfficeDBA
+  BrokerID: BrokerID
+  OfficeStatus: OfficeStatus
+  Status: Status
+  UserType: Full Time Sales Professional
+
+availableLanguage:
+- name: LanguageName
+  issuedBy: GrantingAuthority
+  validFrom: '1970-01-01T00:00:00Z'
+  validUntil: '1970-01-01T00:00:00Z'
+
+certification:
+- type: Certification
+  name: CetificationName
+  validFrom: '1970-01-01T00:00:00.000Z'
+  additionalProperty:
+    CertificationTypeID: CertificationTypeID
+    MostRecentCertificationDate: '1970-01-01T00:00:00.000Z'
+
+memberOf:
+- type: OrganizationRole
+  roleName: MLSMember
+  memberOf:
+    type: MultipleListingService
+    name: PersonMLSName1
+  memberId: PersonMLSID1
+  member: 'https://contactid.ds.bhhsresource.com/profile/card#me'
+
+- type: OrganizationRole
+  roleName: MLSMember
+  memberOf:
+    type: MultipleListingService
+    name: PersonMLSName15
+  memberId: PersonMLSID15
+  member: 'https://contactid.ds.bhhsresource.com/profile/card#me'
+
+- type: OrganizationRole
+  roleName: RoleName
+  memberOf: 'https://AccountID.ds.bhhsresource.com/profile/card#me'
+
+permit:
+- type: RealEstateLicense
+  name: 'PersonDRELicenseState1 DRE #PersonDRELicenseNbr1'
+  identifier: PersonDRELicenseNbr1
+  issuedBy:
+    type: State
+    name: PersonDRELicenseState1
+    identifier: PersonDRELicenseState1
+  issuedThrough:
+    type: GovernmentService
+    name: PersonDRELicenseState1 Department of Real Estate
+
+- type: RealEstateLicense
+  name: 'PersonDRELicenseState7 DRE #PersonDRELicenseNbr7'
+  identifier: PersonDRELicenseNbr7
+  issuedBy:
+    type: State
+    name: PersonDRELicenseState7
+    identifier: PersonDRELicenseState7
+  issuedThrough:
+    type: GovernmentService
+    name: PersonDRELicenseState7 Department of Real Estate

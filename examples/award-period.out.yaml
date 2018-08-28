@@ -1,0 +1,8 @@
+type: AwardSeries
+identifier:
+- type: PropertyValue
+  name: HSFPeriodID
+  value: 112
+name: 1988 2nd Quarter
+startDate: 1988-04-01T19:00:00.000Z
+endDate: 1988-06-30T18:00:00.000Z

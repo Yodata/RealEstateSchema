@@ -1,0 +1,20 @@
+type: ImageObject
+id: 'https://contactid.ds.bhhsresource.com/profile/image/ContactPictureGUID.jpg'
+name: ContactPictureGUID.jpg
+dateCreated: '1970-01-01T00:00:00.000'
+dateModified: '1970-01-01T00:00:00.000'
+encodingFormat: image/jpeg
+content: Picture
+identifier:
+  ContactPictureGUID: ContactPictureGUID
+about:
+  type: RealEstateAgent
+  id: 'https://contactid.ds.bhhsresource.com/profile/card#me'
+  name: FirstName LastName
+  email: Email
+  identifier:
+    ContactGUID: contact6-d591-e811-9efd-0a3d083f1533
+    ContactID: ContactId
+additionalProperty:
+  Description: Description
+  PictureType: PictureType

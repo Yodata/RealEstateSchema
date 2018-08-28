@@ -1,0 +1,80 @@
+type: Organization
+id: 'https://affiliateid.ds.bhhsresource.com/profile/card#me'
+name: AffiliateDBA
+email: AffiliatePublicEmail
+url: AffiliatePrimaryWebSite
+telephone:
+- AffiliateBusinessPhone
+- AffiliatePublicPhone
+- AffiliateOtherPhone
+faxNumber: AffiliateFax
+numberOfEmployees: 1
+numberOfSubOrganizations: 1
+
+identifier:
+  AffiliateID: AffiliateID
+  AffiliateMLSID: AffiliateMLSID
+  BrokerID: BrokerID
+
+owner:
+  type: Person
+  email: BrokerOwnerEmail
+  faxNumber: BrokerOwnerFax
+  givenName: BrokerOwnerFirstName
+  familyName: BrokerOwnerLastName
+  telephone: BrokerOwnerPhone
+
+additionalProperty:
+  AffiliateStatus: AffiliateStatus
+  FranchiseType: FranchiseType
+  FullTimeReportedCount: 1
+  FullTimeRosterCount: 1
+  PartTimeReportedCount: 1
+  PartTimeRosterCount: 1
+  MobileLeadNotificationEmail: MobileLeadNotificationEmail
+  MobileLeadNotificationPhone: MobileLeadNotificationPhone
+
+address:
+  type: PostalAddress
+  addressCountry: AffiliateCountry
+  addressLocality: AffiliateCity
+  addressRegion: AffiliateState
+  postalCode: AffiliateZipCode
+  streetAddress:
+  - AffiliateStreetAddress1
+  - AffiliateStreetAddress2
+
+memberOf:
+- type: OrganizationRole
+  roleName: MLSMember
+  member: 'https://affiliateid.ds.bhhsresource.com/profile/card#me'
+  memberId: AffiliateMLSID1
+  memberOf:
+    type: MultipleListingService
+    name: AffiliateMLSName1
+
+- type: OrganizationRole
+  member: 'https://affiliateid.ds.bhhsresource.com/profile/card#me'
+  memberId: AffiliateMLSID15
+  memberOf:
+    name: AffiliateMLSName15
+    type: MultipleListingService
+  roleName: MLSMember
+
+
+- type: OrganizationRole
+  memberOf: GrantingAuthority
+  roleName: DesignationType
+  startDate: '1970-01-01T00:00:00Z'
+  endDate: '1970-01-01T00:00:00Z'
+
+parentOrganization:
+  type: OrganizationRole
+  roleName: FranchiseAffiliate
+  parentOrganization: 'https://hsf.ds.bhhsresource.com/profile/card#me'
+  startDate: '1970-01-01T00:00:00Z'
+  endDate: '1970-01-01T00:00:00Z'
+  renewalDate: '1970-01-01T00:00:00Z'
+
+
+
